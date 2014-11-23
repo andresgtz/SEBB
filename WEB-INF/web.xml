@@ -26,24 +26,15 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
-    </servlet-mapping> 
+    </servlet-mapping>  
 
     <servlet>
-      <servlet-name>Consulta</servlet-name>
-      <servlet-class>interfaces.InterfazConsulta</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Consulta</servlet-name>
-        <url-pattern>/Consulta</url-pattern>
-    </servlet-mapping>    
-
-   <servlet>
-      <servlet-name>Registrar</servlet-name>
+      <servlet-name>Registro</servlet-name>
       <servlet-class>interfaces.InterfazRegistro</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Registrar</servlet-name>
-        <url-pattern>/Registrar</url-pattern>
+        <servlet-name>Registro</servlet-name>
+        <url-pattern>/Registro</url-pattern>
     </servlet-mapping> 
 
     <servlet>

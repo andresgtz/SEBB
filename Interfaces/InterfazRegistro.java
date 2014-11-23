@@ -40,7 +40,7 @@ public class InterfazRegistro extends HttpServlet {
 
   public void iniciarRegistro(){  
     out.println("<p>Indique los siguientes datos para su suscripcion</p>");
-    out.println("<form method=\"GET\" action=\"Registrar\">");
+    out.println("<form method=\"GET\" action=\"Registro\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"registrar\"/>");
     out.println("<p> Email  <input type=\"text\" name=\"email\" size=\"15\"></p>");
     out.println("<p> Nombre  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
