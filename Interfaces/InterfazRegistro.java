@@ -59,19 +59,20 @@ public class InterfazRegistro extends HttpServlet {
   }
 
   public void registrarSuscriptor() {
-    out.println("<p>DOES IT WORK?!</p>");
-    
+   
+     out.println("<p>DOES IT WORK?!</p>");
     cr = new ControlRegistro();
+
     String email = thisRequest.getParameter("email").trim();
     String nombre = thisRequest.getParameter("nombre").trim();
     String apellido = thisRequest.getParameter("apellido").trim();
     String telefono = thisRequest.getParameter("telefono").trim();
     String password = thisRequest.getParameter("password").trim();
+    out.println("<p>Su registro fue exitoso, " + nombre +  ". Gracias por suscribirse a nuestra revista.</p>");
     
     cr.agregarCliente(email, nombre, apellido, telefono, password);
     
-    out.println("<p>Su registro fue exitoso, " + nombre +  ". Gracias por suscribirse a nuestra revista.</p>");
-    out.println("<p>Presione el boton para terminar.</p>");
+    out.println("<p>Presione el boton para1 terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");

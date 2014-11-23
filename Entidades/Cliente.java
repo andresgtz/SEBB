@@ -24,9 +24,10 @@ Statement stmt;
 
     public void agregarCliente(String email, String nombre,String apellido, String telefono,String password){
     //SQL QUERY
+        System.out.println("<p>si llega </p>");
         try {
          String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password)" +
-                   " VALUES ("+ email + " , '" + nombre + "', " + apellido + ", '"+ telefono + "', '"+ password + "' )";
+                   " VALUES ('"+ email + "' , '" + nombre + "', '" + apellido + "', '"+ telefono + "', '"+ password + "' );";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
