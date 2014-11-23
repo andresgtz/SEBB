@@ -59,10 +59,12 @@ public class InterfazRegistro extends HttpServlet {
   }
 
   public void registrarSuscriptor() {
+    out.println("<p>DOES IT WORK?!</p>");
+    
     cr = new ControlRegistro();
     String email = thisRequest.getParameter("email").trim();
     String nombre = thisRequest.getParameter("nombre").trim();
-    String apellido = thisRequest.getParameter("apellido");
+    String apellido = thisRequest.getParameter("apellido").trim();
     String telefono = thisRequest.getParameter("telefono").trim();
     String password = thisRequest.getParameter("password").trim();
     
