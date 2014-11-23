@@ -27,7 +27,7 @@ Statement stmt;
         System.out.println("<p>si llega </p>");
         try {
          String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password)" +
-                   " VALUES ('"+ email + "' , '" + nombre + "', '" + apellido + "', '"+ telefono + "', '"+ password + "' );";
+                   'VALUES ("'+ email + '", "' + nombre + '", "' + apellido + '", "'+ telefono + '", "'+ password + '" );';
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
