@@ -42,11 +42,11 @@ public class InterfazRegistro extends HttpServlet {
     out.println("<p>Indique los siguientes datos para su suscripcion</p>");
     out.println("<form method=\"GET\" action=\"Registrar\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"registrar\"/>");
-    out.println("<p> Nombre  <input type=\"text\" name=\"nombreS\" size=\"15\"></p>");
-    out.println("<p> ID  <input type=\"text\" name=\"idS\" size=\"15\"></p>");
-    out.println("<p> Direccion  <input type=\"text\" name=\"dirS\" size=\"15\"></p>");
-    out.println("<p> Telefono  <input type=\"text\" name=\"telS\" size=\"15\"></p>");
-    out.println("<p> Tipo de suscripcion  <input type=\"text\" name=\"tipoS\" size=\"15\"></p>");
+    out.println("<p> Email  <input type=\"text\" name=\"email\" size=\"15\"></p>");
+    out.println("<p> Nombre  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
+    out.println("<p> Apellido  <input type=\"text\" name=\"apellido\" size=\"15\"></p>");
+    out.println("<p> Telefono  <input type=\"text\" name=\"telefono\" size=\"15\"></p>");
+    out.println("<p> Password <input type=\"text\" name=\"password\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
  
@@ -60,13 +60,13 @@ public class InterfazRegistro extends HttpServlet {
 
   public void registrarSuscriptor() {
     cr = new ControlRegistro();
-    String email = thisRequest.getParameter("nombreS").trim();
-    String id = Integer.parseInt(thisRequest.getParameter("idS").trim());
-    String dir = thisRequest.getParameter("dirS");
-    String tel = Integer.parseInt(thisRequest.getParameter("telS").trim());
-    String tipo = thisRequest.getParameter("tipoS").trim();
+    String email = thisRequest.getParameter("email").trim();
+    String nombre = thisRequest.getParameter("nombre").trim();
+    String apellido = thisRequest.getParameter("apellido");
+    String telefono = thisRequest.getParameter("telefono").trim();
+    String password = thisRequest.getParameter("password").trim();
     
-    cr.agregarSuscriptor(nombre, id, dir, tel, tipo);
+    cr.agregarCliente(email, nombre, apellido, telefono, password);
     
     out.println("<p>Su registro fue exitoso, " + nombre +  ". Gracias por suscribirse a nuestra revista.</p>");
     out.println("<p>Presione el boton para terminar.</p>");
