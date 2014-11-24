@@ -9,7 +9,7 @@ public class Cuenta {
    public Cuenta(){
       try {
         String userName = "root";
-        String password = "root";
+        String password = "";
         String url = "jdbc:mysql://localhost/cajero";
         Class.forName ("com.mysql.jdbc.Driver").newInstance();
         conn = DriverManager.getConnection (url, userName, password);
