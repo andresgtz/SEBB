@@ -15,7 +15,7 @@ Statement stmt;
     public void Articulos(){
         try {
             String userName = "root";
-            String password = "root";
+            String password = "";
             String url = "jdbc:mysql://localhost/SEBB";
             Class.forName ("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection (url, userName, password);
@@ -31,6 +31,59 @@ Statement stmt;
    }
 
    public String getArticulo(int idArticulo) {
+     String infoArticulo = "Autor: ";
+     try {
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       B
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       A
+       String s = "Select A
 
 
     public void insertarArticulo(int idArticulo, int idRevista, String nombre, String autor ,String fechaPublicacion, String clasificacion){
