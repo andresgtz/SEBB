@@ -23,6 +23,16 @@ Statement stmt;
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
     
+   public void publicarArticulo(int ida, String fecha){
+      try {
+         String s = "UPDATE articulo SET fechaPublicacion = " + fecha + " WHERE ncuenta = " + ida;
+         stmt.executeUpdate(s);
+      } catch (SQLException e) {System.out.println ("Cannot publish article" + e);}
+   }
+
+   public String getArticulo(int idArticulo) {
+
+
     public void insertarArticulo(int idArticulo, int idRevista, String nombre, String autor ,String fechaPublicacion, String clasificacion){
     //SQL QUERY
         try {

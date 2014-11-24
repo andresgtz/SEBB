@@ -31,6 +31,13 @@ Statement stmt;
             stmt.executeUpdate(s);
         }catch (Exception e) { System.out.println ("Cannot renew suscription." + e ); }  
     }
+    public void pagarSuscripcion(int sid){
+      try {
+        String s = "Pagar suscripcion con id " + sid;
+        System.out.println(s);
+      }catch (Exception e) { System.out.println ("Cannot pay suscription" + e ); }
+    }
+
     public void cancelarSuscripcion(int sid){
         try {
             String s = "DELETE FROM SUSCRIPCIONES WHERE ID=" + sid;
