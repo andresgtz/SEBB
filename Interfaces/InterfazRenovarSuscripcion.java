@@ -10,6 +10,8 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
   HttpServletRequest thisRequest;
   PrintWriter out;
   ControlRenovarSuscripcion cr;
+  int idUsuario;
+
 
   public void doGet(HttpServletRequest request,
         HttpServletResponse response)
@@ -34,11 +36,14 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
     out.println("<h1>SEBB</h1>");
     out.println("<h3>Crear Suscripcion</h3>");
 
+    idUsuario = Integer.parseInt(thisRequest.getParameter("idUsuario").trim());
+
+
     String operacion = request.getParameter("operacion");
     if(operacion == null){
       pedirDatos();
     } else if(operacion.equals("renovarSuscripcion")){
-      publicarArticulo();
+      renovarSuscripcion();
     }
 
   }
@@ -47,8 +52,7 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
     out.println("<p>Indique los datos del articulo</p>");
     out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"renovarSuscripcion\"/>");
-    out.println("<p> ID del Cliente  <input type=\"text\" name=\"idCliente\" value="+getCurrentUser()+"size=\"15\"></p>");
-    out.println("<p> ID de Revista  <input type=\"text\" name=\"idCliente\" value="+getCurrentUser()+"size=\"15\"></p>");
+    out.println("<input type=\"hidden\" name=\"idCliente\" value=\"" + idUsuario + "\"/>");
     out.println("<p><input type=\"submit\" value=\"Renovar\"name=\"B1\"></p>");
     out.println("</form>");
 
@@ -64,13 +68,13 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
   public void renovarSuscripcion() {
     cr = new ControlRenovarSuscripcion();
 
-    int idCliente = Integer.parseInt(thisRequest.getParameter("idCliente").trim());
+    // int idCliente = Integer.parseInt(thisRequest.getParameter("idCliente").trim());
 
-    cr.renovarSuscripcion(idCliente);
+    cr.renovarSuscripcion(idUsuario);
 
     out.println("<p>La suscripcion del cliente: " + idCliente +  " fue renovada.</p>");
     out.println("<p>Presione el boton para terminar.</p>");
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c

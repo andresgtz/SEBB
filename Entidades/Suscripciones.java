@@ -19,10 +19,36 @@ Statement stmt;
 
     public void renovarSuscripcion(int sid){
     //SQL QUERY
-    try {
-            String s = "UPDATE SUSCRIPCIONES SET fechaExpiracion=DATE_ADD(fechaExpiracion, INTERVAL 1 YEAR) WHERE ID=" + sid;
+        java.util.Date dt = new java.util.Date();
+        java.util.Date expirationDate = new java.util.Date();
+        int year = expirationDate.getYear();
+        year = (year + 1);
+        expirationDate.setMonth(year);
+
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        java.text.SimpleDateFormat sexpirationDate = new java.text.SimpleDateFormat("yyyy-MM-dd");
+
+        String currentTime = sdf.format(dt);
+        String expirationTime = sexpirationDate.format(expirationDate);
+
+        System.out.println(currentTime);
+        System.out.println(expirationDate);
+
+        try {   
+                String s = "INSERT INTO SUSCRIPCIONES " + 
+                " VALUES (NULL, '" + sid + "', 0, '"+currentTime+"', '"+ expirationTime + "', 99.99)";
+                System.out.println(s);
+                stmt.executeUpdate(s);
+            }catch (Exception e) { System.out.println ("Cannot renew suscription." + e ); }  
+    }
+
+    
+    public void cancelarSuscripcion(int sid){
+        try {
+            String s = "DELETE FROM SUSCRIPCIONES WHERE ID=" + sid;
             System.out.println(s);
             stmt.executeUpdate(s);
-        }catch (Exception e) { System.out.println ("Cannot renew suscription." + e ); }  
+        }catch (Exception e) { System.out.println ("Cannot cancel suscription" + e ); }  
     }
+
 }
