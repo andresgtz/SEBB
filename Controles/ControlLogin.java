@@ -12,6 +12,14 @@ public class ControlLogin {
    public boolean validarCuenta(String email,String password){            
       return(cliente.validar(email,password));
    }
+
+   public int getUserId(String email){            
+      return(cliente.getUserId(email));
+   }
+
+   public int getUserType(String email){            
+      return(cliente.getUserType(email));
+   }
    
    
 }

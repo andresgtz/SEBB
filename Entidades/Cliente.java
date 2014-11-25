@@ -46,6 +46,32 @@ Statement stmt;
            stmt.executeUpdate(s);
         }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
     }
+
+    public int getUserId(String e) {
+        int id = 1;        
+        try {
+         stmt.executeQuery ("SELECT idCliente FROM Clientes WHERE email ="+ e);
+         ResultSet rs = stmt.getResultSet(); 
+         rs.next();
+         id = rs.getBoolean("idCliente");                    
+         rs.close(); 
+         return id;
+      } catch (SQLException x) {System.out.println("No se encontro el usuario " + x);}
+        return id;
+    }
+
+    public int getUserType(String e) {
+        int tipo = 0;        
+        try {
+         stmt.executeQuery ("SELECT tipo FROM Clientes WHERE email ="+ e);
+         ResultSet rs = stmt.getResultSet(); 
+         rs.next();
+         tipo = rs.getBoolean("tipo");                    
+         rs.close(); 
+         return tipo;
+      } catch (SQLException x) {System.out.println("No se encontro el usuario " + x);}
+        return tipo;
+    }
     
     public void eliminarCliente(String e){
     //SQL QUERY

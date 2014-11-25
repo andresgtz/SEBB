@@ -48,7 +48,7 @@ public class InterfazLogin extends HttpServlet {
     out.println("<p>Indique el correo de la cuenta y contrase;a </p>");
     out.println("<form method=\"GET\" action=\"Login\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"validar\"/>");
-    out.println("<p> Cuenta  <input type=\"text\" name=\"cuenta\" size=\"15\"></p>");
+    out.println("<p> Usuario  <input type=\"text\" name=\"usuario\" size=\"15\"></p>");
     out.println("<p> Constrasena <input type=\"text\" name=\"contrasena\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Enviar\"name=\"B1\"></p>");
     out.println("</form>");
@@ -65,12 +65,18 @@ public class InterfazLogin extends HttpServlet {
   public void validarCuenta(){  
     ce = new ControlLogin();
     //La funcion trim() elimina espacios antes y despues del valor
-    String correo = thisRequest.getParameter("correo").trim();
+    String usuario = thisRequest.getParameter("usuario").trim();
     String contrasena = thisRequest.getParameter("contrasena").trim();
-    boolean existente = ce.validarCuenta(correo,contrasena);
-    if (existente){ 
+    boolean existente = ce.validarCuenta(usuario,contrasena);
+    if (existente){
+      int userid = ce.getUserId(usuario);
+      int usertype = ce.getUserType(usuario);
+
+      out.println("<p>Los datos son correctos</p>");
       out.println("<form method=\"GET\" action=\"menu.html\">");
-      out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       // !!!!CAMBIO!!!
+      out.println("<input type=\"hidden\" name=\"tipoUsuario\" value=\"" + usertype + "\"/>");       // !!!!CAMBIO!!!
+      out.println("<p><input type=\"submit\" value=\"Entrar\"name=\"B1\"></p>");
       out.println("</form>");
       out.println("</BODY>");
       out.println("</HTML>");
