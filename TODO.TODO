@@ -5,8 +5,11 @@ Interfaces:
  ☐ Login
  ✔ InstertarArticulo @done (14-11-24 19:22)
  ✔ InstertarRevista @done (14-11-24 19:22)
- ☐ PublicarArticulo
- ☐ PublicarRevista
+ ✔ PublicarArticulo @started(14-11-24 19:49) @done (14-11-24 20:41) @lasted(0:52)
+ ✔ PublicarRevista @started(14-11-24 20:41) @done (14-11-24 21:05) @lasted(0:24)
+ ☐ AbrirArticulo
+ ☐ AbrirRevista
+ ☐ RenovarSubscripcion
  ☐ ...
 
 Controles:
@@ -19,6 +22,16 @@ Controles:
 
 Entidades:
  ☐ Articulos
+   ☐ agregarSuscripcion():int IdSuscripcion
+   ☐ buscarArticulo(string busqueda): int idArticulo
+   ☐ insertarArticulo(): 
+   ☐ renovarSuscripcion():void
+   ☐ cancelarSuscripcion():void
+   ☐ insertarPago():void
+   ☐ agregarCliente():void
+   ☐ eliminarCliente(string e):void
+   ☐ publicarArticulo(int aid):void
+   ☐ publicarRevista(int rid):void
  ☐ Banco*
  ☐ Cliente
  ☐ Cuenta*

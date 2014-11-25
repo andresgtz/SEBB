@@ -9,7 +9,7 @@ public class InterfazInsertarArticulo extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
-  ControlAgregarArticulo cr;
+  ControlInsertarArticulo cr;
   
   public void doGet(HttpServletRequest request,
         HttpServletResponse response)
