@@ -15,5 +15,10 @@ Statement stmt;
             conn = DriverManager.getConnection (url, userName, password);
             stmt = conn.createStatement();
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
-  }
+    }
+
+    public String getArticulo(int idArticulo) {
+        
+    }
+
 }
