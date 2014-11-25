@@ -1,15 +1,15 @@
-"package interfaces;
+package interfaces;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlExtraccion;
+import controles.*;
 
 public class InterfazLogin extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
-  ControlExtraccion ce;
+  ControlLogin ce;
   
    public void doGet(HttpServletRequest request,
         HttpServletResponse response)
@@ -24,12 +24,12 @@ public class InterfazLogin extends HttpServlet {
     out.println("<META http-equiv=Content-Type content=\"text/html\">");
     out.println("</HEAD>");
     out.println("<BODY>");
-    out.println("<TITLE>Banco AMSS</TITLE>");
-    out.println("<h2>Cajero Electronico</h2>");
+    out.println("<TITLE>Login</TITLE>");
+    out.println("<h2>SEBB</h2>");
     //out.println("<h3>Loginr Saldo</h3>");
-    out.println("<h3>CANALES ME LA PELA</h3>");
+    out.println("<h3>Log in!</h3>");
     out.println("<p></p>");
-    out.println("<a href=\"menu.html\"> Regresar al menu principal </a>");
+    //out.println("<a href=\"menu.html\"> Regresar al menu principal </a>");
     out.println("</BODY>");
     out.println("</HTML>");    
 
@@ -38,8 +38,7 @@ public class InterfazLogin extends HttpServlet {
     if(operacion == null){ // El menu nos envia un parametro para indicar el inicio de una transaccion
       iniciarLogin();  
     }else if(operacion.equals("validar")){
-      out.println("<p>VALIDAR</p>");
-     // validarCuenta();
+      
     } 
   }
 
@@ -54,7 +53,7 @@ public class InterfazLogin extends HttpServlet {
     out.println("<p><input type=\"submit\" value=\"Enviar\"name=\"B1\"></p>");
     out.println("</form>");
  
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
 
@@ -68,13 +67,8 @@ public class InterfazLogin extends HttpServlet {
     //La funcion trim() elimina espacios antes y despues del valor
     String correo = thisRequest.getParameter("correo").trim();
     String contrasena = thisRequest.getParameter("contrasena").trim();
-    out.println("<p>VALIDAR CUENTA</p>"+"<p>"+cuenta+"</p>");
-    boolean existente = ce.validarCuenta(cuenta);
+    boolean existente = ce.validarCuenta(correo,contrasena);
     if (existente){ 
-    //  float saldo = ce.loginSaldo(cuenta); 
-      out.println("<p>Su saldo es de " + saldo + "</p>");
-      out.println("<p>Fue un place servirlo. Gracias por operar con nuestro banco.</p></p>");
-      out.println("<p>Presione el boton para terminar.</p>");
       out.println("<form method=\"GET\" action=\"menu.html\">");
       out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
       out.println("</form>");
