@@ -51,11 +51,11 @@ public class InterfazInsertarArticulo extends HttpServlet {
     out.println("<p>Indique los siguientes datos para insertar un articulo</p>");
     out.println("<form method=\"GET\" action=\"InsertarArticulo\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarArticulo\"/>");
-    out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
+    out.println("<p> ID Revista  <input type=\"text\" class=\"form-control\" name=\"idRevista\" size=\"15\"></p>");
     out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + idAutor + "\"/>");
-    out.println("<p> Titulo  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
+    out.println("<p> Titulo  <input type=\"text\" class=\"form-control\" name=\"nombre\" size=\"15\"></p>");
     out.println("<p> Contenido  <input type=\"textarea\" name=\"contenido\"></p>");
-    out.println("<p> Clasificacion  <input type=\"text\" name=\"clasificacion\" size=\"15\"></p>");
+    out.println("<p> Clasificacion  <input type=\"text\" class=\"form-control\" name=\"clasificacion\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
  

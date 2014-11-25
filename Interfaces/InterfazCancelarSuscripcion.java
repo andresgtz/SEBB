@@ -47,7 +47,7 @@ public class InterfazCancelarSuscripcion extends HttpServlet {
     out.println("<p>Indique los datos de la suscripcion a Cancelar</p>");
     out.println("<form method=\"GET\" action=\"Cancelar Suscripcion\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"cancelarSuscripcion\"/>");
-    out.println("<p> ID de Suscripcion  <input type=\"text\" name=\"idSuscripcion\" size=\"15\"></p>");
+    out.println("<p> ID de Suscripcion  <input type=\"text\" class=\"form-control\" name=\"idSuscripcion\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"CancelarSuscripcion\"name=\"B1\"></p>");
     out.println("</form>");
 

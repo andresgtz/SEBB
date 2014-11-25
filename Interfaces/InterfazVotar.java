@@ -47,7 +47,7 @@ public class InterfazVotar extends HttpServlet {
     out.println("<p>Indique el ID del articulo a Votar</p>");
     out.println("<form method=\"GET\" action=\"Votar\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"Votar\"/>");
-    out.println("<p> ID Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
+    out.println("<p> ID Articulo  <input type=\"text\" class=\"form-control\" name=\"idArticulo\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Votar\"name=\"B1\"></p>");
     out.println("</form>");
 

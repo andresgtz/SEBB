@@ -47,7 +47,7 @@ public class InterfazPublicarArticulo extends HttpServlet {
     out.println("<p>Indique los datos del articulo</p>");
     out.println("<form method=\"GET\" action=\"PublicarArticulo\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"publicarArticulo\"/>");
-    out.println("<p> ID del Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
+    out.println("<p> ID del Articulo  <input type=\"text\" class=\"form-control\" name=\"idArticulo\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Publicar\"name=\"B1\"></p>");
     out.println("</form>");
 
