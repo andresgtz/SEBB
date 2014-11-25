@@ -8,7 +8,7 @@ String nombre;
 String apellido;
 String telefono;
 String password;
-String tipo;
+int tipo;
 boolean puedePublicar;
 boolean suscripcion;
 Connection conn;
@@ -27,15 +27,17 @@ Statement stmt;
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
 
-    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, String tipo, String tipoCreador){
+    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo, int tipoCreador){
     //SQL QUERY
+    if (tipoCreador > tipo){
         try {
-         String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo)" +
-                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "')";
-         System.out.println(s);
-         stmt.executeUpdate(s);
-      }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
-        
+           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo)" +
+                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "')";
+           System.out.println(s);
+           stmt.executeUpdate(s);
+        }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
+      } else 
+          System.out.println ("User doesn't have enough privilege");
     }
     
     public void eliminarCliente(String e){
