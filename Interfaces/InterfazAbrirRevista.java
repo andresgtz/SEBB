@@ -70,7 +70,7 @@ public class InterfazAbrirRevista extends HttpServlet {
     out.println("<H3>Articulos de la revista "+ idRevista+ " </H3>");
     out.println(salida);
     out.println("<p>Presione el boton para terminar.</p>");
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c

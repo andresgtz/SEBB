@@ -38,7 +38,7 @@ public class InterfazVotar extends HttpServlet {
     if(operacion == null){
       pedirDatos();
     } else if(operacion.equals("Votar")){
-      buscarArticulo();
+      votar();
     }
 
   }
@@ -51,7 +51,7 @@ public class InterfazVotar extends HttpServlet {
     out.println("<p><input type=\"submit\" value=\"Ver\"name=\"B1\"></p>");
     out.println("</form>");
 
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
 
@@ -61,7 +61,7 @@ public class InterfazVotar extends HttpServlet {
     out.println("</HTML>");
   }
 
-  public void buscarArticulo() {
+  public void votar() {
     cr = new ControlVotar();
 
     int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
