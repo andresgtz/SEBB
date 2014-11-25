@@ -1,3 +1,23 @@
+/*
+CHEAT SHEET
+
+tipo: tipo que eres
+    0 = suscriptor
+    1 = autor
+    2 = juez
+    3 = admin/editorJefe
+
+tipoCreador: tipo que te creo
+    0 = suscriptor
+    1 = autor
+    2 = juez
+    3 = admin/editorJefe
+
+*/
+
+
+
+
 package entidades;
 import java.sql.*;
 import java.io.*;
@@ -31,8 +51,8 @@ Statement stmt;
     //SQL QUERY
     if (tipoCreador > tipo){
         try {
-           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo)" +
-                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "')";
+           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo, tipoCreador)" +
+                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "', '"+tipoCreador+"'')";
            System.out.println(s);
            stmt.executeUpdate(s);
         }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
