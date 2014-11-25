@@ -68,11 +68,11 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
   public void renovarSuscripcion() {
     cr = new ControlRenovarSuscripcion();
 
-    // int idCliente = Integer.parseInt(thisRequest.getParameter("idCliente").trim());
+    //int idCliente = Integer.parseInt(thisRequest.getParameter("idCliente").trim());
 
     cr.renovarSuscripcion(idUsuario);
 
-    out.println("<p>La suscripcion del cliente: " + idCliente +  " fue renovada.</p>");
+    out.println("<p>La suscripcion del cliente: " + idUsuario +  " fue renovada.</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
