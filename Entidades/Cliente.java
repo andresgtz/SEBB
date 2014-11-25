@@ -69,18 +69,7 @@ Statement stmt;
       }catch (Exception g) { System.out.println ("Cannot update database" + g ); }  
         
     }
-
-    public void insertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN ,String fechaPublicacion){
-    //SQL QUERY
-        try {
-         String s = "INSERT INTO CLIENTES (idRevista,titulo,numeroVolumen,ISSN ,fechaPublicacion)" +
-                   " VALUES ("+ idRevista + " , '" + titulo + "', " + numeroVolumen + ", '"+ ISSN + "', '"+ fechaPublicacion+" )";
-         System.out.println(s);
-         stmt.executeUpdate(s);
-      }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
-        
-    }
-
+    
     public void publicarArticulo(int ida, String fecha){
       try {
          String s = "UPDATE articulo SET fechaPublicacion = " + fecha + " WHERE ncuenta = " + ida;
@@ -123,7 +112,7 @@ Statement stmt;
     }
 
     public Boolean validar(String e,String p){
-    //SQL QUERY
+    //VALIDACION LOGIN
        try {
          stmt.executeQuery ("SELECT email FROM CLIENTES WHERE email = '" + e +"'' and password = '"+p+"'");
          ResultSet rs = stmt.getResultSet(); 
