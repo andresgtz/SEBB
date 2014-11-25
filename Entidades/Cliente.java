@@ -26,6 +26,29 @@ Statement stmt;
             
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
+
+    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, String tipo, String tipoCreador){
+    //SQL QUERY
+        try {
+         String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo)" +
+                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "')";
+         System.out.println(s);
+         stmt.executeUpdate(s);
+      }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
+        
+    }
+    
+    public void eliminarCliente(String e){
+    //SQL QUERY
+        try {
+         String s = "DELETE FROM CLIENTES WHERE email='" + e+"'";
+         System.out.println(s);
+         stmt.executeUpdate(s);
+      }catch (Exception g) { System.out.println ("Cannot update database" + g ); }  
+        
+    }
+
+
  
     public void insertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN ,String fechaPublicacion){
     //SQL QUERY
@@ -77,28 +100,6 @@ Statement stmt;
             System.out.println(s);
             stmt.executeUpdate(s);
         }catch (Exception e) { System.out.println ("Cannot cancel suscription" + e ); }  
-    }
-
-    public void agregarCliente(String email, String nombre,String apellido, String telefono,String password){
-    //SQL QUERY
-        System.out.println("si jala");
-        try {
-         String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password)" +
-                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "')";
-         System.out.println(s);
-         stmt.executeUpdate(s);
-      }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
-        
-    }
-    
-    public void eliminarCliente(String e){
-    //SQL QUERY
-        try {
-         String s = "DELETE FROM CLIENTES WHERE email='" + e+"'";
-         System.out.println(s);
-         stmt.executeUpdate(s);
-      }catch (Exception g) { System.out.println ("Cannot update database" + g ); }  
-        
     }
 
     public Boolean validar(String e,String p){

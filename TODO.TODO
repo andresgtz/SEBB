@@ -22,6 +22,7 @@ Controles:
 
 Entidades:
  ☐ Articulos
+ ☐ Cliente
    ☐ agregarSuscripcion():int IdSuscripcion
    ☐ buscarArticulo(string busqueda): int idArticulo
    ☐ insertarArticulo(): 
@@ -32,10 +33,6 @@ Entidades:
    ☐ eliminarCliente(string e):void
    ☐ publicarArticulo(int aid):void
    ☐ publicarRevista(int rid):void
- ☐ Banco*
- ☐ Cliente
- ☐ Cuenta*
- ☐ Pagos*
  ☐ Revistas
  ☐ Subscripciones
 *falta por verifcar
