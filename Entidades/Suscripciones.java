@@ -3,11 +3,6 @@ import java.sql.*;
 import java.io.*;
 
 public class Suscripciones{
-int id;
-char tipo;
-String fechaInicio;
-String fechaExpiracion;
-double precio;
 Connection conn;
 Statement stmt;
 

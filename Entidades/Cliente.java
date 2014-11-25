@@ -10,11 +10,11 @@ String telefono;
 String password;
 String tipo;
 boolean puedePublicar;
+boolean suscripcion;
 Connection conn;
 Statement stmt;
 
     public Cliente(){
-      System.out.println("prueba ");
         try {
             String userName = "root";
             String password = "";
@@ -27,6 +27,17 @@ Statement stmt;
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
  
+    public void insertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN ,String fechaPublicacion){
+    //SQL QUERY
+        try {
+         String s = "INSERT INTO CLIENTES (idRevista,titulo,numeroVolumen,ISSN ,fechaPublicacion)" +
+                   " VALUES ("+ idRevista + " , '" + titulo + "', " + numeroVolumen + ", '"+ ISSN + "', '"+ fechaPublicacion+" )";
+         System.out.println(s);
+         stmt.executeUpdate(s);
+      }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
+        
+    }
+
     public void publicarArticulo(int ida, String fecha){
       try {
          String s = "UPDATE articulo SET fechaPublicacion = " + fecha + " WHERE ncuenta = " + ida;
