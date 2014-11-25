@@ -18,7 +18,11 @@ Statement stmt;
     }
 
     public String getArticulo(int idArticulo) {
-        
+       try {
+         stmt.executeQuery ("SELECT contenido FROM Articulos WHERE idArticulo ="+ idArticulo);
+         ResultSet rs = stmt.getResultSet(); 
+         return rs;
+      } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
     }
 
 }
