@@ -3,9 +3,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlAbrirArticulo;
+import controles.ControlVotar;
 
-public class InterfazAbrirArticulo extends HttpServlet {
+public class InterfazVotar extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
@@ -65,7 +65,7 @@ public class InterfazAbrirArticulo extends HttpServlet {
     cr = new ControlVotar();
 
     int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
-    cr.Votar(idArticulo);
+    cr.votar(idArticulo);
     out.println("<p>Has votado por el Articulo: "+idArticulo+"</p>");
 
     

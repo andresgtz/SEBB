@@ -57,7 +57,7 @@ Statement stmt;
 
         try {
          String s = "INSERT INTO ARTICULOS " + 
-         " VALUES (NULL, '" + idRevista + "', , '" + idAutor + "', '" + nombre + "', 0, '"+contenido+"', '"+ currentTime + "',"+ "'"+clasificacion+"', 0)";
+         " VALUES (NULL, '" + idRevista + "', '" + idAutor + "', '" + nombre + "', 0, '"+contenido+"', '"+ currentTime + "',"+ "'"+clasificacion+"', 0)";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
