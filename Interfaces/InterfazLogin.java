@@ -22,9 +22,14 @@ public class InterfazLogin extends HttpServlet {
     out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">");
     out.println("<HTML>");
     out.println("<HEAD>");
+    out.println("<script src='//code.jquery.com/jquery-2.1.1.min.js'></script>");//h
+    out.println("<link href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' rel='stylesheet'>");//h
+    out.println("<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js'></script>");//h
     out.println("<META http-equiv=Content-Type content=\"text/html\">");
     out.println("</HEAD>");
     out.println("<BODY>");
+    out.println("<div class='jumbotron'>");//o
+    out.println("<div class='container' style='text-align: center;'>");//o
     out.println("<TITLE>Login</TITLE>");
     out.println("<h2>SEBB</h2>");
     //out.println("<h3>Loginr Saldo</h3>");
@@ -57,7 +62,10 @@ public class InterfazLogin extends HttpServlet {
     out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
-
+    out.println("</div>");//c
+    out.println("</div>");//c
+    out.println("</BODY>");
+    out.println("</HTML>");
       
   }
   
@@ -68,11 +76,9 @@ public class InterfazLogin extends HttpServlet {
     
     String usuario = thisRequest.getParameter("usuario").trim();
     String contrasena = thisRequest.getParameter("contrasena").trim();
-    out.println("<p>caca</p>");
-    out.println("<p>"+usuario+"</p>");
     boolean existente = ce.validarCuenta(usuario,contrasena);
     if (existente){
-      out.println("<p>Los datos son correctos</p>");
+      out.println("<p>Los datos son correctos, bienvenido "+usuario+"</p>");
       int userid = ce.getUserId(usuario);
       int usertype = ce.getUserType(usuario);
 
@@ -81,10 +87,13 @@ public class InterfazLogin extends HttpServlet {
       out.println("<input type=\"hidden\" name=\"tipoUsuario\" value=\"" + usertype + "\"/>");       // !!!!CAMBIO!!!
       out.println("<p><input type=\"submit\" value=\"Entrar\"name=\"B1\"></p>");
       out.println("</form>");
+      out.println("</div>");//c
+      out.println("</div>");//c
       out.println("</BODY>");
       out.println("</HTML>");
     } else {
-       iniciarLogin();
+      out.println("<p style='color:red;'>Los datos son incorrectos.</p>");
+      iniciarLogin();
     }
   }
 }

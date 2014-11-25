@@ -29,7 +29,7 @@ public class InterfazRegistro extends HttpServlet {
     out.println("</HEAD>");
     out.println("<BODY>");
     out.println("<div class='jumbotron'>");//o
-    out.println("<div class='container'> style='text-align: center;'");//o
+    out.println("<div class='container' style='text-align: center;'>");//o
     out.println("<TITLE>SEBB</TITLE>");
 
     out.println("<h1>Revista</h1>");
@@ -61,10 +61,8 @@ public class InterfazRegistro extends HttpServlet {
     out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
-
     out.println("</div>");//c
     out.println("</div>");//c
-
     out.println("</BODY>");
     out.println("</HTML>");    
   }

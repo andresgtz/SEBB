@@ -13,10 +13,10 @@ Interfaces:
 
 Controles:
  : CancelarSubscripcion
- ☐ InsertarArticulo
- ☐ InsertarRevista
- ☐ PublicarRevista
- ☐ PublicarArticulo
+ ✔ InsertarArticulo @done (14-11-25 11:25)
+ ✔ InsertarRevista @done (14-11-25 11:25)
+ ✔ PublicarRevista @done (14-11-25 11:25)
+ ✔ PublicarArticulo @done (14-11-25 11:25)
  ☐ ...
 SON BASICAMENTE LAS FUNCIONES DE CLIENTE
 Entidades:
@@ -37,4 +37,4 @@ Entidades:
  ✔ Subscripciones @done (14-11-24 21:38)
 *falta por verifcar
 Extra:
- ☐ Debugg clases @started(14-11-24 19:49)
+ ✔ Debugg clases @started(14-11-24 19:49) @done (14-11-25 11:26) @lasted(15:37)
