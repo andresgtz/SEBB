@@ -79,8 +79,8 @@ Statement stmt;
         int votos = rs.getInt ("votos");
         votos = votos + 1;
         String s = "UPDATE Articulos SET votos = " + votos + " WHERE idArticulo = " + idArticulo;
-        stmt.executeQuery (s);
-      } catch (SQLException e) {System.out.println ("Cannot vote for the article" + e);}
+        stmt.executeUpdate (s);
+      } catch (SQLException e) {System.out.println ("Cannot vote for the article " + e);}
     }
 
     public void publicarArticulo(int ida){
