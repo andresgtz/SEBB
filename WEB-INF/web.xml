@@ -73,6 +73,15 @@
       <url-pattern>/InsertarRevista</url-pattern>
     </servlet-mapping> 
 
+    <servlet>
+      <servlet-name>Votar</servlet-name>
+      <servlet-class>interfaces.InterfazVotar</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>Votar</servlet-name>
+      <url-pattern>/Votar</url-pattern>
+    </servlet-mapping> 
+
 <!--
 <servlet>
     <servlet-name>HelloWorld</servlet-name> 

@@ -81,7 +81,7 @@ public class InterfazInsertarArticulo extends HttpServlet {
     
     out.println("<p>¡Articulo creado correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c
