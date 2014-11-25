@@ -46,7 +46,6 @@ public class InterfazInsertarRevista extends HttpServlet {
     out.println("<p> Titulo  <input type=\"text\" name=\"titulo\" size=\"15\"></p>");
     out.println("<p> Volumen  <input type=\"text\" name=\"numeroVolumen\" size=\"15\"></p>");
     out.println("<p> ISSN  <input type=\"text\" name=\"issn\" size=\"15\"></p>");
-    out.println("<p> Fecha  <input type=\"text\" name=\"fecha\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
  
@@ -67,7 +66,7 @@ public class InterfazInsertarRevista extends HttpServlet {
     int numeroVolumen = Integer.parseInt(thisRequest.getParameter("numeroVolumen").trim());
     String issn = thisRequest.getParameter("issn");
     
-    cr.insertarRevista(idRevista, titulo, numeroVolumen, issn);
+    cr.InsertarRevista(idRevista, titulo, numeroVolumen, issn);
     
     out.println("<p>¡Revista creada correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
