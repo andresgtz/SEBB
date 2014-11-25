@@ -38,6 +38,15 @@
     </servlet-mapping> 
 
     <servlet>
+      <servlet-name>AbrirArticulo</servlet-name>
+      <servlet-class>interfaces.InterfazAbrirArticulo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>AbrirArticulo</servlet-name>
+      <url-pattern>/AbrirArticulo</url-pattern>
+    </servlet-mapping> 
+
+    <servlet>
       <servlet-name>InsertarRevista</servlet-name>
       <servlet-class>interfaces.InterfazInsertarRevista</servlet-class>
     </servlet>
