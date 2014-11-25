@@ -63,7 +63,7 @@ public class InterfazAbrirArticulo extends HttpServlet {
     Boolean publicado = cr.verificarArticulo(idArticulo);
     if(publicado){
       salida = cr.AbrirArticulo(idArticulo);
-      out.println("<p>El articulo es el siguiente: " + salida +  "</p>");
+      out.println("<p>El articulo es el siguiente:<br>" + salida +  "</p>");
     } else {
       out.println("<p>El articulo no ha sido publicado o no existe.</p>");
     }
