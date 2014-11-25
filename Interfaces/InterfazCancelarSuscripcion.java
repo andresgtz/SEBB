@@ -38,7 +38,7 @@ public class InterfazCancelarSuscripcion extends HttpServlet {
     if(operacion == null){
       pedirDatos();
     } else if(operacion.equals("cancelarSuscripcion")){
-      publicarArticulo();
+      cancelarSuscripcion();
     }
 
   }

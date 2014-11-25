@@ -82,6 +82,24 @@
       <url-pattern>/Votar</url-pattern> <!-- "/Votar" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping> 
 
+    <servlet>
+      <servlet-name>RenovarSuscripcion</servlet-name>
+      <servlet-class>interfaces.InterfazRenovarSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>RenovarSuscripcion</servlet-name>
+      <url-pattern>/RenovarSuscripcion</url-pattern>
+    </servlet-mapping> 
+
+    <servlet>
+      <servlet-name>CancelarSuscripcion</servlet-name>
+      <servlet-class>interfaces.InterfazCancelarSuscripcion</servlet-class>
+    </servlet>
+    <servlet-mapping>
+      <servlet-name>CancelarSuscripcion</servlet-name>
+      <url-pattern>/CancelarSuscripcion</url-pattern>
+    </servlet-mapping> 
+
 <!--
 <servlet>
     <servlet-name>HelloWorld</servlet-name> 

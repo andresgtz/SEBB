@@ -95,6 +95,7 @@ public class InterfazLogin extends HttpServlet {
       } else if (usertype == 0) {
         out.println("<p>Menu de suscriptor</p>");
         menuSuscriptor();
+        suscripciones();
       } else if (usertype == 2) {
         out.println("<p>Menu de juez</p>");
         menuSuscriptor();
@@ -164,15 +165,23 @@ public class InterfazLogin extends HttpServlet {
       out.println("<p><input type=\"submit\" value=\"Abrir revista\"name=\"B1\"></p>");
       out.println("</form>");
 
-      // out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");                 
-      // out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      // out.println("<p><input type=\"submit\" value=\"Renovar la suscripcion\"name=\"B1\"></p>");
-      // out.println("</form>");
+    
 
-      // out.println("<form method=\"GET\" action=\"SolicitarEdicion\">");                 
-      // out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      // out.println("<p><input type=\"submit\" value=\"Solicitar una edicion\"name=\"B1\"></p>");
-      // out.println("</form>");
+
+    }
+
+    public void suscripciones() {
+
+      out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Renovar tu suscripcion\"name=\"B1\"></p>");
+      out.println("</form>");
+
+      out.println("<form method=\"GET\" action=\"CancelarSuscripcion\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Cancelar tu suscripcion\"name=\"B1\"></p>");
+      out.println("</form>");
+
 
     }
   
