@@ -31,8 +31,8 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
     out.println("<div class='jumbotron'>");//o
     out.println("<div class='container' style='text-align: center;'>");//o
     out.println("<TITLE>SEBB</TITLE>");
-    out.println("<h1>Revista</h1>");
-    out.println("<h3>Suscripcion</h3>");
+    out.println("<h1>SEBB</h1>");
+    out.println("<h3>Crear Suscripcion</h3>");
 
     String operacion = request.getParameter("operacion");
     if(operacion == null){

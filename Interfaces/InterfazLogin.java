@@ -10,6 +10,8 @@ public class InterfazLogin extends HttpServlet {
   HttpServletRequest thisRequest;
   PrintWriter out;
   ControlLogin ce;
+  int userid = -1;
+  int usertype = 0;
   
    public void doGet(HttpServletRequest request,
         HttpServletResponse response)
@@ -79,13 +81,31 @@ public class InterfazLogin extends HttpServlet {
     boolean existente = ce.validarCuenta(usuario,contrasena);
     if (existente){
       out.println("<p>Los datos son correctos, bienvenido "+usuario+"</p>");
-      int userid = ce.getUserId(usuario);
-      int usertype = ce.getUserType(usuario);
+      userid = ce.getUserId(usuario);
+      usertype = ce.getUserType(usuario);
 
-      out.println("<form method=\"GET\" action=\"menu.html\">");
-      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       // !!!!CAMBIO!!!
-      out.println("<input type=\"hidden\" name=\"tipoUsuario\" value=\"" + usertype + "\"/>");       // !!!!CAMBIO!!!
-      out.println("<p><input type=\"submit\" value=\"Entrar\"name=\"B1\"></p>");
+      if (userid < 0) {
+        iniciarLogin();
+      } else if (usertype == 1) {
+        out.println("<p>Menu de autor</p>");
+        menuSuscriptor();
+        menuAutor();
+      } else if (usertype == 0) {
+        out.println("<p>Menu de suscriptor</p>");
+        menuSuscriptor();
+      } else if (usertype == 2) {
+        out.println("<p>Menu de juez</p>");
+        menuSuscriptor();
+        menuJuez();
+      } else if (usertype == 3) {
+        out.println("<p>Menu de editor en jefe</p>");
+        menuSuscriptor();
+        menuJuez();
+        menuEditorEnJefe();
+      }
+
+      out.println("<a href='index.html'>Salir</a>");
+
       out.println("</form>");
       out.println("</div>");//c
       out.println("</div>");//c
@@ -96,4 +116,66 @@ public class InterfazLogin extends HttpServlet {
       iniciarLogin();
     }
   }
+    
+    public void menuAutor() {
+      out.println("<p>Indique la operacion que desea realizar</p>");
+
+      out.println("<form method=\"GET\" action=\"InsertarArticulo\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Crear un articulo\"name=\"B1\"></p>");
+      out.println("</form>");
+
+      out.println("<form method=\"GET\" action=\"InsertarRevista\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Crear revista\"name=\"B1\"></p>");
+      out.println("</form>");
+    }
+
+    public void menuJuez() {
+      out.println("<p>Indique la operacion que desea realizar</p>");
+
+      out.println("<form method=\"GET\" action=\"PublicarArticulo\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Publicar un articulo\"name=\"B1\"></p>");
+      out.println("</form>");
+    }
+
+    public void menuEditorEnJefe() {
+      // out.println("<form method=\"GET\" action=\"SeleccionarJuez\">");                 
+      // out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      // out.println("<p><input type=\"submit\" value=\"Seleccionar un juez\"name=\"B1\"></p>");
+      // out.println("</form>");
+
+      out.println("<form method=\"GET\" action=\"PublicarArticulo\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Publicar algun articulo\"name=\"B1\"></p>");
+      out.println("</form>");
+    }
+
+    public void menuSuscriptor() {
+      out.println("<p>Indique la operacion que desea realizar</p>");
+
+      out.println("<form method=\"GET\" action=\"AbrirArticulo\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Abrir a articulo\"name=\"B1\"></p>");
+      out.println("</form>");
+
+      out.println("<form method=\"GET\" action=\"AbrirRevista\">");                 
+      out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      out.println("<p><input type=\"submit\" value=\"Abrir revista\"name=\"B1\"></p>");
+      out.println("</form>");
+
+      // out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");                 
+      // out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      // out.println("<p><input type=\"submit\" value=\"Renovar la suscripcion\"name=\"B1\"></p>");
+      // out.println("</form>");
+
+      // out.println("<form method=\"GET\" action=\"SolicitarEdicion\">");                 
+      // out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
+      // out.println("<p><input type=\"submit\" value=\"Solicitar una edicion\"name=\"B1\"></p>");
+      // out.println("</form>");
+
+    }
+  }
+
 }
