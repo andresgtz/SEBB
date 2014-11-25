@@ -20,10 +20,12 @@ Statement stmt;
     public String getArticulo(int idArticulo) {
         String cont="";
        try {
-         stmt.executeQuery ("SELECT contenido FROM Articulos WHERE idArticulo ="+ idArticulo);
+         stmt.executeQuery ("SELECT nombre, fechaPublicacion, contenido FROM Articulos WHERE idArticulo ="+ idArticulo);
          ResultSet rs = stmt.getResultSet(); 
          rs.next();
-         cont = rs.getString("contenido");                      
+         cont = rs.getString("nombre");
+         cont += "<br>" + rs.getString("fechaPublicacion");
+         cont += "<br>" + rs.getString("contenido");                      
          rs.close(); 
          return cont;
       } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
