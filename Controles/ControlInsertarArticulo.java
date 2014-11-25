@@ -1,5 +1,5 @@
 package controles;
-import entidades.Articulo;
+import entidades.Cliente;
 
 // CANALES - RECIBE: int idArticulo, int idRevista, string nombre, string autor, string fecha, string autor, string clasificacion
 // aqui se crea un articulo nuevo
@@ -8,11 +8,11 @@ public class ControlInsertarArticulo {
   Cliente cliente;
 
   public ControlInsertarArticulo() {
-    articulo = new Articulo();
+    cliente = new Cliente();
   }
 
-  public void InsertarArticulo(int idArticulo, String fecha, String nombre, String contenido, String clasificacion) {
-    cliente.publicarArticulo(idArticulo, fecha, nombre, contenido, clasificacion);
+  public void InsertarArticulo(int idArticulo, int idRevista, String nombre, String autor, String clasificacion) {
+    cliente.insertarArticulo(idArticulo, idRevista, nombre, autor, clasificacion);
   }
 }
 

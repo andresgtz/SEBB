@@ -66,9 +66,8 @@ public class InterfazInsertarRevista extends HttpServlet {
     String titulo = thisRequest.getParameter("titulo");
     int numeroVolumen = Integer.parseInt(thisRequest.getParameter("numeroVolumen").trim());
     String issn = thisRequest.getParameter("issn");
-    String fecha = thisRequest.getParameter("fecha");
     
-    cr.insertarRevista(idRevista, titulo, numeroVolumen, issn, fecha);
+    cr.insertarRevista(idRevista, titulo, numeroVolumen, issn);
     
     out.println("<p>¡Revista creada correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
