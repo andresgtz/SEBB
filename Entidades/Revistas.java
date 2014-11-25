@@ -41,14 +41,16 @@ Statement stmt;
       int idArticulo;
       String nombre = "";
       String resultado = "";
+      int votos;
       try {
-        stmt.executeQuery ("SELECT idArticulo, nombre FROM Articulos WHERE idRevista ="+ idRevista);
+        stmt.executeQuery ("SELECT idArticulo, nombre, votos FROM Articulos WHERE idRevista ="+ idRevista);
         ResultSet rs = stmt.getResultSet(); 
         System.out.println("<ul>");
         while(rs.next()){
         idArticulo = rs.getInt("idArticulo");
           nombre = rs.getString("nombre"); 
-          resultado+="<li> id: "+idArticulo+" nombre: " + nombre + "</li> ";
+          votos = rs.getInt("votos");
+          resultado+="<li> id: "+idArticulo+" nombre: " + nombre + " votos: "+ votos +"</li> ";
         }
         System.out.println("</ul>");                  
         rs.close(); 

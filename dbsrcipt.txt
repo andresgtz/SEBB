@@ -30,8 +30,7 @@ create table Suscripciones(
 	fechaExpiracion DATE NOT NULL,
 	precio DOUBLE NOT NULL,
 	PRIMARY KEY ( id ),
-	FOREIGN KEY (idCliente) REFERENCES Clientes(idCliente),
-	FOREIGN KEY (idRevista) REFERENCES Revistas(idRevista)
+	FOREIGN KEY (idCliente) REFERENCES Clientes(idCliente)
 	
 );
 
