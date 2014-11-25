@@ -38,7 +38,7 @@ public class InterfazLogin extends HttpServlet {
     if(operacion == null){ // El menu nos envia un parametro para indicar el inicio de una transaccion
       iniciarLogin();  
     }else if(operacion.equals("validar")){
-      
+      validarCuenta();
     } 
   }
 
