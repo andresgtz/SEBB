@@ -77,7 +77,7 @@ Statement stmt;
         }catch (Exception e) { System.out.println ("Cannot renew suscription." + e ); }  
     }
 
-    public void pagarSuscripcion(int sid){
+    public void insertarSuscripcion(int sid, ){
       try {
         String s = "Pagar suscripcion con id " + sid;
         System.out.println(s);

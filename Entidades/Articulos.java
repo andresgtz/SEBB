@@ -60,5 +60,16 @@ Statement stmt;
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
     }
+    
+    public void votar(int idArticulo) {
+      try {
+        stmt.executeQuery ("SELECT votos FROM Articulos WHERE idArticulo =" + idArticulo);
+        ResultSet rs = stmt.getResultSet();
+        int votos = rs.getInt ("votos");
+        votos = votos + 1;
+        String s = "UPDATE Articulos SET votos = " + votos + " WHERE idArticulo = " + idArticulo;
+        stmt.executeQuery (s);
+      } catch (SQLException e) {System.out.println ("Cannot vote for the article" + e);}
+    }
 
 }
