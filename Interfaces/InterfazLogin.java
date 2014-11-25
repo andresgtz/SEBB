@@ -51,6 +51,7 @@ public class InterfazLogin extends HttpServlet {
     out.println("<p> Usuario  <input type=\"text\" name=\"usuario\" size=\"15\"></p>");
     out.println("<p> Constrasena <input type=\"text\" name=\"contrasena\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Enviar\"name=\"B1\"></p>");
+    
     out.println("</form>");
  
     out.println("<form method=\"GET\" action=\"index.html\">");

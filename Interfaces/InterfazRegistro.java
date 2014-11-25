@@ -71,7 +71,6 @@ public class InterfazRegistro extends HttpServlet {
 
   public void registrarSuscriptor() {
    
-     out.println("<p>DOES IT WORK?!?</p>");
     cr = new ControlRegistro();
 
     String usuario = thisRequest.getParameter("usuario").trim();
