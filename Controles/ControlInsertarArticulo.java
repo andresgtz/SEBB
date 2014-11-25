@@ -11,7 +11,7 @@ public class ControlInsertarArticulo {
     cliente = new Cliente();
   }
 
-  public void InsertarArticulo(int idArticulo, int idRevista, String nombre, String autor, String clasificacion) {
+  public void InsertarArticulo(int idArticulo, int idRevista, String nombre, String clasificacion) {
     cliente.insertarArticulo(idArticulo, idRevista, nombre, autor, clasificacion);
   }
 }

@@ -6,9 +6,9 @@ Interfaces:
  ✔ InstertarRevista @done (14-11-24 19:22)
  ✔ PublicarArticulo @started(14-11-24 19:49) @done(14-11-24 20:41) @lasted(0:52)
  ✔ PublicarRevista @started(14-11-24 20:41) @done(14-11-24 21:05) @lasted(0:24)
- ☐ AbrirArticulo @started(14-11-24 22:06)
- ☐ AbrirRevista 
- ☐ RenovarSubscripcion
+ ✔ AbrirArticulo @started(14-11-24 22:06) @done (14-11-24 22:59) @lasted(0:53)
+ ☐ AbrirRevista
+ ✔ RenovarSubscripcion @done (14-11-24 23:08)
  ☐ ...
 
 Controles:
