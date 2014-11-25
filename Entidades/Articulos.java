@@ -67,6 +67,7 @@ Statement stmt;
       try {
         stmt.executeQuery ("SELECT votos FROM Articulos WHERE idArticulo =" + idArticulo);
         ResultSet rs = stmt.getResultSet();
+        rs.next();
         int votos = rs.getInt ("votos");
         votos = votos + 1;
         String s = "UPDATE Articulos SET votos = " + votos + " WHERE idArticulo = " + idArticulo;

@@ -3,13 +3,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlPublicarArticulo;
+import controles.ControlRenovarSuscripcion;
 
-public class InterfazPublicarArticulo extends HttpServlet {
+public class InterfazRenovarSuscripcion extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
-  ControlPublicarArticulo cr;
+  ControlRenovarSuscripcion cr;
 
   public void doGet(HttpServletRequest request,
         HttpServletResponse response)
@@ -31,8 +31,8 @@ public class InterfazPublicarArticulo extends HttpServlet {
     out.println("<div class='jumbotron'>");//o
     out.println("<div class='container' style='text-align: center;'>");//o
     out.println("<TITLE>SEBB</TITLE>");
-    out.println("<h1>Suscripcion</h1>");
-    out.println("<h3>Renovar</h3>");
+    out.println("<h1>SEBB</h1>");
+    out.println("<h3>Crear Suscripcion</h3>");
 
     String operacion = request.getParameter("operacion");
     if(operacion == null){
@@ -45,9 +45,10 @@ public class InterfazPublicarArticulo extends HttpServlet {
 
   public void pedirDatos(){
     out.println("<p>Indique los datos del articulo</p>");
-    out.println("<form method=\"GET\" action=\"renovarSuscripcion\">");
+    out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"renovarSuscripcion\"/>");
     out.println("<p> ID del Cliente  <input type=\"text\" name=\"idCliente\" value="+getCurrentUser()+"size=\"15\"></p>");
+    out.println("<p> ID de Revista  <input type=\"text\" name=\"idCliente\" value="+getCurrentUser()+"size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Renovar\"name=\"B1\"></p>");
     out.println("</form>");
 
