@@ -28,6 +28,7 @@ Statement stmt;
     }
 
     public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo, int tipoCreador){
+    //tipo 0 = suscriptor; 1 = autor; 2 = juez; 3 = administrador
     //SQL QUERY
     if (tipoCreador > tipo){
         try {
