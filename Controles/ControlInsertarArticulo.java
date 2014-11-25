@@ -5,14 +5,14 @@ import entidades.Articulo;
 // aqui se crea un articulo nuevo
 
 public class ControlInsertarArticulo {
-  Articulos articulo;
+  Cliente cliente;
 
-  // public ControlPublicarArticulo() {
-  //   articulo = new Articulo();
-  // }
+  public ControlInsertarArticulo() {
+    articulo = new Articulo();
+  }
 
-  // public void publicarArticulo(int idArticulo, String fecha) {
-  //   articulo.publicarArticulo(idArticulo, fecha);
-  // }
+  public void InsertarArticulo(int idArticulo, String fecha, String nombre, String contenido, String clasificacion) {
+    cliente.publicarArticulo(idArticulo, fecha, nombre, contenido, clasificacion);
+  }
 }
 
