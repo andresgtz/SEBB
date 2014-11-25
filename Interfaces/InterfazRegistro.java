@@ -42,7 +42,7 @@ public class InterfazRegistro extends HttpServlet {
     out.println("<p>Indique los siguientes datos para su suscripcion</p>");
     out.println("<form method=\"GET\" action=\"Registro\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"registrar\"/>");
-    out.println("<p> Email  <input type=\"text\" name=\"email\" size=\"15\"></p>");
+    out.println("<p> Usuario  <input type=\"text\" name=\"usuario\" size=\"15\"></p>");
     out.println("<p> Nombre  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
     out.println("<p> Apellido  <input type=\"text\" name=\"apellido\" size=\"15\"></p>");
     out.println("<p> Telefono  <input type=\"text\" name=\"telefono\" size=\"15\"></p>");
@@ -64,7 +64,7 @@ public class InterfazRegistro extends HttpServlet {
      out.println("<p>DOES IT WORK?!?</p>");
     cr = new ControlRegistro();
 
-    String email = thisRequest.getParameter("email").trim();
+    String usuario = thisRequest.getParameter("usuario").trim();
     String nombre = thisRequest.getParameter("nombre").trim();
     String apellido = thisRequest.getParameter("apellido").trim();
     String telefono = thisRequest.getParameter("telefono").trim();
@@ -75,7 +75,7 @@ public class InterfazRegistro extends HttpServlet {
 
     out.println("<p>Su registro fue exitoso, " + nombre +  ". Gracias por suscribirse a nuestra revista.</p>");
     
-    cr.agregarCliente(email, nombre, apellido, telefono, password, tipo);
+    cr.agregarCliente(usuario, nombre, apellido, telefono, password, tipo);
     
     out.println("<p>Presione el boton para1 terminar.</p>");
     out.println("<form method=\"GET\" action=\"index.html\">");
