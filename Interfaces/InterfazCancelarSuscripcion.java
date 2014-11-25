@@ -3,9 +3,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlRenovarSuscripcion;
+import controles.ControlCancelarSuscripcion;
 
-public class InterfazRenovarSuscripcion extends HttpServlet {
+public class InterfazCancelarSuscripcion extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
