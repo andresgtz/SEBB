@@ -42,7 +42,6 @@ public class InterfazInsertarRevista extends HttpServlet {
     out.println("<p>Indique los siguientes datos para agregar una revista</p>");
     out.println("<form method=\"GET\" action=\"InsertarRevista\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarRevista\"/>");
-    out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
     out.println("<p> Titulo  <input type=\"text\" name=\"titulo\" size=\"15\"></p>");
     out.println("<p> Volumen  <input type=\"text\" name=\"numeroVolumen\" size=\"15\"></p>");
     out.println("<p> ISSN  <input type=\"text\" name=\"issn\" size=\"15\"></p>");
@@ -62,12 +61,11 @@ public class InterfazInsertarRevista extends HttpServlet {
     cr = new ControlInsertarRevista();
     String salida = "";
     
-    int idRevista = Integer.parseInt(thisRequest.getParameter("idRevista").trim());
     String titulo = thisRequest.getParameter("titulo");
     int numeroVolumen = Integer.parseInt(thisRequest.getParameter("numeroVolumen").trim());
     String issn = thisRequest.getParameter("issn");
     
-    cr.insertarRevista(idRevista, titulo, numeroVolumen, issn);
+    cr.insertarRevista(titulo, numeroVolumen, issn);
     
     out.println("<p>¡Revista creada correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
