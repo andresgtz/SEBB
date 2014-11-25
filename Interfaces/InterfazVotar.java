@@ -3,22 +3,22 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlInsertarArticulo;
+import controles.ControlAbrirArticulo;
 
-public class InterfazInsertarArticulo extends HttpServlet {
+public class InterfazAbrirArticulo extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
-  ControlInsertarArticulo cr;
-  
+  ControlVotar cr;
+
   public void doGet(HttpServletRequest request,
-        HttpServletResponse response)
-        throws IOException {
+      HttpServletResponse response)
+      throws IOException {
     thisResponse = response;
     thisRequest = request;
     thisResponse.setContentType("text/html");
     out = thisResponse.getWriter();
-    
+
     out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">");
     out.println("<HTML>");
     out.println("<HEAD>");
@@ -32,49 +32,43 @@ public class InterfazInsertarArticulo extends HttpServlet {
     out.println("<div class='container' style='text-align: center;'>");//o
     out.println("<TITLE>SEBB</TITLE>");
     out.println("<h1>Articulo</h1>");
-    out.println("<h3>Crear</h3>");
+    out.println("<h3>Votar</h3>");
 
     String operacion = request.getParameter("operacion");
     if(operacion == null){
       pedirDatos();
-    } else if(operacion.equals("insertarArticulo")){
-      insertarArticulo();
+    } else if(operacion.equals("Votar")){
+      buscarArticulo();
     }
 
   }
 
   public void pedirDatos(){
-    out.println("<p>Indique los siguientes datos para insertar un articulo</p>");
-    out.println("<form method=\"GET\" action=\"InsertarArticulo\">");
-    out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarArticulo\"/>");
-    out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
-    out.println("<p> Titulo  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
-    out.println("<p> Contenido  <input type=\"textarea\" name=\"contenido\"></p>");
-    out.println("<p> Clasificacion  <input type=\"text\" name=\"clasificacion\" size=\"15\"></p>");
-    out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
+    out.println("<p>Indique el ID del articulo a Votar</p>");
+    out.println("<form method=\"GET\" action=\"Votar\">");
+    out.println("<input type=\"hidden\" name=\"operacion\" value=\"Votar\"/>");
+    out.println("<p> ID Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
+    out.println("<p><input type=\"submit\" value=\"Ver\"name=\"B1\"></p>");
     out.println("</form>");
- 
+
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
+
     out.println("</div>");//c
     out.println("</div>");//c
     out.println("</BODY>");
-    out.println("</HTML>");    
+    out.println("</HTML>");
   }
 
-  public void insertarArticulo() {
-    cr = new ControlInsertarArticulo();
-    String salida = "";
+  public void buscarArticulo() {
+    cr = new ControlVotar();
+
+    int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
+    cr.Votar(idArticulo);
+    out.println("<p>Has votado por el Articulo: "+idArticulo+"</p>");
+
     
-    int idRevista = Integer.parseInt(thisRequest.getParameter("idRevista").trim());
-    String nombre = thisRequest.getParameter("nombre");
-    String contenido = thisRequest.getParameter("contenido");
-    String clasificacion = thisRequest.getParameter("clasificacion");
-    
-    cr.InsertarArticulo(idRevista, nombre, contenido, clasificacion);
-    
-    out.println("<p>¡Articulo creado correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
@@ -82,9 +76,8 @@ public class InterfazInsertarArticulo extends HttpServlet {
     out.println("</div>");//c
     out.println("</div>");//c
     out.println("</BODY>");
-    out.println("</HTML>"); 
+    out.println("</HTML>");
   }
-  
-}
 
+}
 

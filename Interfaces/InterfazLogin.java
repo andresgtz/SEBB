@@ -83,6 +83,8 @@ public class InterfazLogin extends HttpServlet {
       out.println("<p>Los datos son correctos, bienvenido "+usuario+"</p>");
       userid = ce.getUserId(usuario);
       usertype = ce.getUserType(usuario);
+      
+      out.println("<p>Indique la operacion que desea realizar</p>");
 
       if (userid < 0) {
         iniciarLogin();
@@ -118,7 +120,6 @@ public class InterfazLogin extends HttpServlet {
   }
     
     public void menuAutor() {
-      out.println("<p>Indique la operacion que desea realizar</p>");
 
       out.println("<form method=\"GET\" action=\"InsertarArticulo\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
@@ -132,7 +133,6 @@ public class InterfazLogin extends HttpServlet {
     }
 
     public void menuJuez() {
-      out.println("<p>Indique la operacion que desea realizar</p>");
 
       out.println("<form method=\"GET\" action=\"PublicarArticulo\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
@@ -153,7 +153,6 @@ public class InterfazLogin extends HttpServlet {
     }
 
     public void menuSuscriptor() {
-      out.println("<p>Indique la operacion que desea realizar</p>");
 
       out.println("<form method=\"GET\" action=\"AbrirArticulo\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       

@@ -32,7 +32,7 @@ public class InterfazInsertarRevista extends HttpServlet {
     out.println("<div class='container' style='text-align: center;'>");//o
     out.println("<TITLE>SEBB</TITLE>");
     out.println("<h1>Revista</h1>");
-    out.println("<h3>Registro</h3>");
+    out.println("<h3>Crear</h3>");
 
     String operacion = request.getParameter("operacion");
     if(operacion == null){
