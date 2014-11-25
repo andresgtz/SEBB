@@ -32,22 +32,21 @@ public class InterfazInsertarArticulo extends HttpServlet {
     String operacion = request.getParameter("operacion");
     if(operacion == null){
       pedirDatos();
-    } else if(operacion.equals("insertarArticulo")){
-      insertarArticulo();
+    } else if(operacion.equals("insertarRevista")){
+      insertarRevista();
     }
 
   }
 
   public void pedirDatos(){
-    out.println("<p>Indique los siguientes datos para insertar un articulo</p>");
+    out.println("<p>Indique los siguientes datos para agregar una revista</p>");
     out.println("<form method=\"GET\" action=\"InsertarArticulo\">");
-    out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarArticulo\"/>");
-    out.println("<p> ID Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
+    out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarRevista\"/>");
     out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
-    out.println("<p> Nombre  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
-    out.println("<p> Autor  <input type=\"text\" name=\"autor\" size=\"15\"></p>");
+    out.println("<p> Titulo  <input type=\"text\" name=\"titulo\" size=\"15\"></p>");
+    out.println("<p> Volumen  <input type=\"text\" name=\"numeroVolumen\" size=\"15\"></p>");
+    out.println("<p> ISSN  <input type=\"text\" name=\"issn\" size=\"15\"></p>");
     out.println("<p> Fecha  <input type=\"text\" name=\"fecha\" size=\"15\"></p>");
-    out.println("<p> Clasificacion  <input type=\"text\" name=\"clasificacion\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
  
@@ -59,20 +58,19 @@ public class InterfazInsertarArticulo extends HttpServlet {
     out.println("</HTML>");    
   }
 
-  public void insertarArticulo() {
-    cr = new ControlInsertarArticulo();
+  public void insertarRevista() {
+    cr = new ControlInsertarRevista();
     String salida = "";
     
-    int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
     int idRevista = Integer.parseInt(thisRequest.getParameter("idRevista").trim());
-    String nombre = thisRequest.getParameter("nombre");
-    String autor = thisRequest.getParameter("autor");
+    String titulo = thisRequest.getParameter("titulo");
+    int numeroVolumen = Integer.parseInt(thisRequest.getParameter("numeroVolumen").trim());
+    String issn = thisRequest.getParameter("issn");
     String fecha = thisRequest.getParameter("fecha");
-    String clasificacion = thisRequest.getParameter("clasificacion");
     
-    cr.insertarArticulo(idArticulo, idRevista, nombre, autor, fecha, autor, clasificacion);
+    cr.insertarRevista(idRevista, titulo, numeroVolumen, issn, fecha);
     
-    out.println("<p>¡Articulo añadido correctamente!</p>");
+    out.println("<p>¡Revista creada correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
