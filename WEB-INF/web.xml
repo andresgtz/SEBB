@@ -11,75 +11,75 @@
      -->
 
 <servlet>
-      <servlet-name>Login</servlet-name>
-      <servlet-class>interfaces.InterfazLogin</servlet-class>
+      <servlet-name>Login</servlet-name> <!--se identificara como "Login" para su definicion-->
+      <servlet-class>interfaces.InterfazLogin</servlet-class> <!-- la clase que lo implementa esta en interfaces.InterfazLogin -->
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <url-pattern>/Login</url-pattern>  <!-- "/Login" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping>  
 
     <servlet>
-      <servlet-name>Registro</servlet-name>
-      <servlet-class>interfaces.InterfazRegistro</servlet-class>
+      <servlet-name>Registro</servlet-name> <!--se identificara como "Registro" para su definicion-->
+      <servlet-class>interfaces.InterfazRegistro</servlet-class> <!-- la clase que lo implementa esta en interfaces.InterfazRegistro -->
     </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
-        <url-pattern>/Registro</url-pattern>
+        <url-pattern>/Registro</url-pattern> <!-- "/Registro" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping> 
 
     <servlet>
-      <servlet-name>InsertarArticulo</servlet-name>
-      <servlet-class>interfaces.InterfazInsertarArticulo</servlet-class>
+      <servlet-name>InsertarArticulo</servlet-name> <!--se identificara como "InsertarArticulo para su definicion-->
+      <servlet-class>interfaces.InterfazInsertarArticulo</servlet-class> <!-- la clase que lo implementa esta en interfaces.InterfazInsertarArticulo -->
     </servlet>
     <servlet-mapping>
       <servlet-name>InsertarArticulo</servlet-name>
-      <url-pattern>/InsertarArticulo</url-pattern>
+      <url-pattern>/InsertarArticulo</url-pattern> <!-- "/InsertarArticulo" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping> 
 
     <servlet>
-      <servlet-name>AbrirArticulo</servlet-name>
-      <servlet-class>interfaces.InterfazAbrirArticulo</servlet-class>
+      <servlet-name>AbrirArticulo</servlet-name> <!--se identificara como "AbrirArticulo" para su definicion-->
+      <servlet-class>interfaces.InterfazAbrirArticulo</servlet-class><!-- la clase que lo implementa esta en interfaces.InterfazAbrirArticulo-->
     </servlet>
     <servlet-mapping>
       <servlet-name>AbrirArticulo</servlet-name>
-      <url-pattern>/AbrirArticulo</url-pattern>
+      <url-pattern>/AbrirArticulo</url-pattern> <!-- "/AbrirArticulo" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping>
 
     <servlet>
-      <servlet-name>PublicarArticulo</servlet-name>
-      <servlet-class>interfaces.InterfazPublicarArticulo</servlet-class>
+      <servlet-name>PublicarArticulo</servlet-name> <!--se identificara como "PublicarArticulo" para su definicion-->
+      <servlet-class>interfaces.InterfazPublicarArticulo</servlet-class> <!-- la clase que lo implementa esta en interfaces.InterfazPublicarArticulo -->
     </servlet>
     <servlet-mapping>
       <servlet-name>PublicarArticulo</servlet-name>
-      <url-pattern>/PublicarArticulo</url-pattern>
+      <url-pattern>/PublicarArticulo</url-pattern> <!-- "/PublicarArticulo corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping>
 
     <servlet>
-      <servlet-name>AbrirRevista</servlet-name>
-      <servlet-class>interfaces.InterfazAbrirRevista</servlet-class>
+      <servlet-name>AbrirRevista</servlet-name> <!--se identificara como "AbrirRevista" para su definicion-->
+      <servlet-class>interfaces.InterfazAbrirRevista</servlet-class> <!-- la clase que lo implementa esta en interfaces.InterfazAbrirRevista -->
     </servlet>
     <servlet-mapping>
       <servlet-name>AbrirRevista</servlet-name>
-      <url-pattern>/AbrirRevista</url-pattern>
+      <url-pattern>/AbrirRevista</url-pattern> <!-- "/AbrirRevista" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping>  
 
     <servlet>
-      <servlet-name>InsertarRevista</servlet-name>
-      <servlet-class>interfaces.InterfazInsertarRevista</servlet-class>
+      <servlet-name>InsertarRevista</servlet-name> <!--se identificara como "InsertarRevista" para su definicion-->
+      <servlet-class>interfaces.InterfazInsertarRevista</servlet-class><!-- la clase que lo implementa esta en interfaces.InterfazInsertarRevista-->
     </servlet>
     <servlet-mapping>
       <servlet-name>InsertarRevista</servlet-name>
-      <url-pattern>/InsertarRevista</url-pattern>
+      <url-pattern>/InsertarRevista</url-pattern> <!-- "/InsertarRevista" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping> 
 
     <servlet>
-      <servlet-name>Votar</servlet-name>
-      <servlet-class>interfaces.InterfazVotar</servlet-class>
+      <servlet-name>Votar</servlet-name> <!--se identificara como "Votar" para su definicion-->
+      <servlet-class>interfaces.InterfazVotar</servlet-class><!-- la clase que lo implementa esta en interfaces.InterfazVotar-->
     </servlet>
     <servlet-mapping>
       <servlet-name>Votar</servlet-name>
-      <url-pattern>/Votar</url-pattern>
+      <url-pattern>/Votar</url-pattern> <!-- "/Votar" corresponde al url con el que se accedera desde el navegador -->
     </servlet-mapping> 
 
 <!--
