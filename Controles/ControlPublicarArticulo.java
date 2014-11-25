@@ -8,7 +8,7 @@ public class ControlPublicarArticulo {
   Articulos articulo;
 
   public ControlPublicarArticulo() {
-    articulo = new Articulo();
+    articulo = new Articulos();
   }
 
   public void publicarArticulo(int idArticulo) {

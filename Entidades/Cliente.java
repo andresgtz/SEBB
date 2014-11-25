@@ -15,7 +15,7 @@ import java.io.*;
 public class Cliente{
 String email;
 String nombre;
-String apellido;0
+String apellido;
 String telefono;
 String password;
 int tipo;
@@ -92,7 +92,7 @@ Statement stmt;
         }catch (Exception e) { System.out.println ("Cannot renew suscription." + e ); }  
     }
 
-    public void insertarSuscripcion(int sid, ){
+    public void insertarSuscripcion(int sid ){
       try {
         String s = "Pagar suscripcion con id " + sid;
         System.out.println(s);
