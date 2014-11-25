@@ -1,7 +1,6 @@
 package controles;
 import entidades.*;
 
-
 public class ControlRenovarSuscripcion{
    Suscripciones suscripcion;
 

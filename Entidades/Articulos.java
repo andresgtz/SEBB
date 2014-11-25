@@ -61,4 +61,11 @@ Statement stmt;
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
     }
 
+    public void publicarArticulo(int ida){
+      try {
+         String s = "UPDATE Articulos SET publicado = 1 WHERE idArticulo = " + ida;
+         stmt.executeUpdate(s);
+      } catch (SQLException e) {System.out.println ("Cannot publish article" + e);}
+    }
+
 }

@@ -6,11 +6,7 @@ tipo: tipo que eres
     1 = autor
     2 = juez
     3 = admin/editorJefe
-
 */
-
-
-
 
 package entidades;
 import java.sql.*;
@@ -19,7 +15,7 @@ import java.io.*;
 public class Cliente{
 String email;
 String nombre;
-String apellido;
+String apellido;0
 String telefono;
 String password;
 int tipo;
@@ -38,7 +34,7 @@ Statement stmt;
             conn = DriverManager.getConnection (url, userName, password);
             stmt = conn.createStatement();
             
-      }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
+        }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
 
     public void agregarCliente(String usuario, String nombre, String apellido, String telefono, String password, int tipo){
@@ -59,13 +55,6 @@ Statement stmt;
          stmt.executeUpdate(s);
       }catch (Exception g) { System.out.println ("Cannot update database" + g ); }  
         
-    }
-    
-    public void publicarArticulo(int ida, String fecha){
-      try {
-         String s = "UPDATE articulo SET fechaPublicacion = " + fecha + " WHERE ncuenta = " + ida;
-         stmt.executeUpdate(s);
-      } catch (SQLException e) {System.out.println ("Cannot publish article" + e);}
     }
 
     public void renovarSuscripcion(int sid){

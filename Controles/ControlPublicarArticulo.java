@@ -1,5 +1,5 @@
 package controles;
-import entidades.*;
+import entidades.Articulos;
 
 // Canales - RECIBE: idArticulo
 // publica el articulos que recibe
@@ -12,7 +12,7 @@ public class ControlPublicarArticulo {
   }
 
   public void publicarArticulo(int idArticulo) {
-    articulo.publicarArticulo(idArticulo, fecha);
+    articulo.publicarArticulo(idArticulo);
   }
 }
 
