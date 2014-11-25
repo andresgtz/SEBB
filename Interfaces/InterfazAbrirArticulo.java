@@ -26,8 +26,8 @@ public class InterfazAbrirArticulo extends HttpServlet {
     out.println("</HEAD>");
     out.println("<BODY>");
     out.println("<TITLE>SEBB</TITLE>");
-    out.println("<h1>Revista</h1>");
-    out.println("<h3>Registro</h3>");
+    out.println("<h1>Articulo</h1>");
+    out.println("<h3>Abrir</h3>");
 
     String operacion = request.getParameter("operacion");
     if(operacion == null){
