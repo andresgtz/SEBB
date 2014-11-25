@@ -26,8 +26,8 @@ public class InterfazAbrirArticulo extends HttpServlet {
     out.println("</HEAD>");
     out.println("<BODY>");
     out.println("<TITLE>SEBB</TITLE>");
-    out.println("<h1>Revista</h1>");
-    out.println("<h3>Registro</h3>");
+    out.println("<h1>Articulo</h1>");
+    out.println("<h3>Abrir</h3>");
 
     String operacion = request.getParameter("operacion");
     if(operacion == null){
@@ -60,9 +60,13 @@ public class InterfazAbrirArticulo extends HttpServlet {
 
     int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
 
-    salida = cr.AbrirArticulo(idArticulo);
-
-    out.println("<p>El articulo es el siguiente: " + salida +  "</p>");
+    Boolean publicado = cr.verificarArticulo(idArticulo);
+    if(publicado){
+      salida = cr.AbrirArticulo(idArticulo);
+      out.println("<p>El articulo es el siguiente: " + salida +  "</p>");
+    } else {
+      out.println("<p>El articulo no ha sido publicado o no existe.</p>");
+    }
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");

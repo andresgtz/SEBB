@@ -11,9 +11,9 @@ public class ControlInsertarRevista {
     revista = new Revistas();
   }
 
-  public void InsertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN ,String fechaPublicacion) {
-    revista.insertarRevista(idRevista,titulo,numeroVolumen,ISSN,fechaPublicacion);
+  public void InsertarRevista(String titulo, int numeroVolumen, String ISSN) {
+    revista.insertarRevista(titulo,numeroVolumen,ISSN);
   }
-}
+
 }
 
