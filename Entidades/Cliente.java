@@ -11,20 +11,23 @@ String password;
 Connection conn;
 Statement stmt;
 
-    public void Cliente(){
+    public Cliente(){
+      System.out.println("prueba ");
         try {
             String userName = "root";
-            String password = "root";
-            String url = "jdbc:mysql://localhost/SEBB";
+            String password = "";
+            String url = "jdbc:mysql://localhost:3306/SEBB";
+            System.out.println("prueba URL");
             Class.forName ("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection (url, userName, password);
             stmt = conn.createStatement();
+            
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
 
     public void agregarCliente(String email, String nombre,String apellido, String telefono,String password){
     //SQL QUERY
-        System.out.println("<p>si llega </p>");
+        System.out.println("si jala");
         try {
          String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password)" +
                    " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "')";
