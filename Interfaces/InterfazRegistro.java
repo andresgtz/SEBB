@@ -50,7 +50,7 @@ public class InterfazRegistro extends HttpServlet {
     out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
  
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
 
@@ -73,7 +73,7 @@ public class InterfazRegistro extends HttpServlet {
     cr.agregarCliente(email, nombre, apellido, telefono, password);
     
     out.println("<p>Presione el boton para1 terminar.</p>");
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</BODY>");
