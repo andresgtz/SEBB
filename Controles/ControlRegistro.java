@@ -8,8 +8,8 @@ public class ControlRegistro {
     	suscriptor = new Cliente();
     }
     
-    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo, int tipoCreador) {
-        suscriptor.agregarCliente(email, nombre, apellido, telefono, password, int tipo, int tipoCreador);
+    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo) {
+        suscriptor.agregarCliente(email, nombre, apellido, telefono, password, tipo);
 
     }
 }

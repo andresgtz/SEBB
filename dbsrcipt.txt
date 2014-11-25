@@ -1,0 +1,59 @@
+create database SEBB;
+use SEBB;
+
+create table Clientes(
+	idCliente INT NOT NULL AUTO_INCREMENT,
+	email VARCHAR(100) NOT NULL,
+	nombre VARCHAR(60) NOT NULL,
+	apellido VARCHAR(60) NOT NULL,
+	telefono VARCHAR(60) NOT NULL,
+	password VARCHAR(60) NOT NULL,
+	tipo INT NOT NULL,
+	PRIMARY KEY ( idCliente )
+);
+
+create table Revistas(
+	idRevista INT NOT NULL AUTO_INCREMENT,
+	titulo VARCHAR(100) NOT NULL,
+	numeroVolumen INT NOT NULL,
+	ISSN VARCHAR(100) NOT NULL,
+	fechaPublicacion DATE NOT NULL,
+	PRIMARY KEY ( idRevista )
+	
+);
+
+create table Suscripciones(
+	id INT NOT NULL AUTO_INCREMENT,
+	idRevista INT NOT NULL,
+	idCliente INT NOT NULL,
+	tipo INT NOT NULL,
+	fechaInicio DATE NOT NULL,
+	fechaExpiracion DATE NOT NULL,
+	precio DOUBLE NOT NULL,
+	PRIMARY KEY ( id ),
+	FOREIGN KEY (idCliente) REFERENCES Clientes(idCliente),
+	FOREIGN KEY (idRevista) REFERENCES Revistas(idRevista)
+	
+);
+
+create table Articulos(
+	idArticulo INT NOT NULL AUTO_INCREMENT,
+	idRevista INT NOT NULL,
+	nombre VARCHAR(100) NOT NULL,
+	publicado tinyint(1) NOT NULL,
+	contenido TEXT NOT NULL,
+	fechaPublicacion DATE,
+	clasificacion VARCHAR(100) NOT NULL,
+	votos INT NOT NULL,
+	PRIMARY KEY ( idArticulo ),
+	FOREIGN KEY (idRevista) REFERENCES Revistas(idRevista)
+	
+);
+
+create table Articulo_Autor(
+	idArticulo INT NOT NULL,
+	idAutor INT NOT NULL,
+	PRIMARY KEY( idArticulo, idAutor),
+	FOREIGN KEY (idArticulo) REFERENCES Articulos(idArticulo),
+	FOREIGN KEY (idAutor) REFERENCES Clientes(idCliente)
+);
