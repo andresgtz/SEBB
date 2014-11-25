@@ -1,5 +1,5 @@
 package controles;
-import entidades.Articulo;
+import entidades.Articulos;
 
 // CANALES - RECIBE: int idArticulo, int idRevista, string nombre, string autor, string fecha, string autor, string clasificacion
 // aqui se crea un articulo nuevo

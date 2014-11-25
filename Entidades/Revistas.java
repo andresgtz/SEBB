@@ -36,5 +36,23 @@ Statement stmt;
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
         
     }
+
+    public void verArticulos(int idRevista) {
+      int idArticulo;
+      String nombre = "";
+      try {
+        stmt.executeQuery ("SELECT idArticulo, nombre FROM Articulos WHERE idRevista ="+ idRevista);
+        ResultSet rs = stmt.getResultSet(); 
+        System.out.println("<ul>");
+        while(rs.next()){
+        idArticulo = rs.getInt("idArticulo");
+          nombre = rs.getString("nombre"); 
+          System.out.println("<li> id: "+idArticulo+" nombre: " + nombre + "</li> ");
+        }
+        System.out.println("</ul>");                  
+        rs.close(); 
+         
+      } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
+    }
 }
 
