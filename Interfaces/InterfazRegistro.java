@@ -60,7 +60,7 @@ public class InterfazRegistro extends HttpServlet {
 
   public void registrarSuscriptor() {
    
-     out.println("<p>DOES IT WORK?!</p>");
+     out.println("<p>DOES IT WORK?!?</p>");
     cr = new ControlRegistro();
 
     String email = thisRequest.getParameter("email").trim();
