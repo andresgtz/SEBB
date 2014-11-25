@@ -1,12 +1,12 @@
 package controles;
-import entidades.Suscripciones;
+import entidades.*;
 
 
-public class ControlRenovarSuscripcion {
+public class ControlRenovarSuscripcion{
    Suscripciones suscripcion;
 
-   public ControlRenovarSuscripcion(){
-     suscripcion = new Suscripcion();
+	public ControlRenovarSuscripcion(){
+     suscripcion = new Suscripciones();
    }
 
    public void renovarSuscripcion(int idSuscripcion){

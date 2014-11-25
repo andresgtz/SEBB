@@ -3,13 +3,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlInsertarArticulo;
+import controles.*;
 
 public class InterfazInsertarArticulo extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
-  ControlAgregarArticulo cr;
+  ControlPublicarArticulo cr;
   
   public void doGet(HttpServletRequest request,
         HttpServletResponse response)

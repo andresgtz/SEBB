@@ -12,7 +12,7 @@ double precio;
 Connection conn;
 Statement stmt;
 
-    public void Suscripciones(){
+    public Suscripciones(){
         try {
             String userName = "root";
             String password = "";
