@@ -65,7 +65,7 @@ public class InterfazCancelarSuscripcion extends HttpServlet {
 
     int idSuscripcion = Integer.parseInt(thisRequest.getParameter("idSuscripcion").trim());
 
-    cr.cancelarSuscripcion(idCliente);
+    cr.cancelarSuscripcion(idSuscripcion);
 
     out.println("<p>La suscripcion: " + idSuscripcion +  " fue cancelada.</p>");
     out.println("<p>Presione el boton para terminar.</p>");

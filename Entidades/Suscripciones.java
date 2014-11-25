@@ -36,7 +36,7 @@ Statement stmt;
 
         try {   
                 String s = "INSERT INTO SUSCRIPCIONES " + 
-                " VALUES (NULL, '" + sid + "', 0, '"+currentTime+"', '"+ expirationTime + "', 99.99)";
+                " VALUES (NULL, " + sid + ", 0, '"+currentTime+"', '"+ expirationTime + "', 99.99)";
                 System.out.println(s);
                 stmt.executeUpdate(s);
             }catch (Exception e) { System.out.println ("Cannot renew suscription." + e ); }  
