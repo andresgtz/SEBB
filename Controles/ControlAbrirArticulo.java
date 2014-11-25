@@ -12,7 +12,7 @@ public class ControlAbrirArticulo {
     return articulo.getArticulo(idArticulo);
   }
 
-  public String verificarArticulo(int idArticulo) {
+  public Boolean verificarArticulo(int idArticulo) {
     return articulo.verificarArticulo(idArticulo);
   }
 }
