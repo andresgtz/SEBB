@@ -24,7 +24,6 @@ create table Revistas(
 
 create table Suscripciones(
 	id INT NOT NULL AUTO_INCREMENT,
-	idRevista INT NOT NULL,
 	idCliente INT NOT NULL,
 	tipo INT NOT NULL,
 	fechaInicio DATE NOT NULL,
