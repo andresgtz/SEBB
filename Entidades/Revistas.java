@@ -37,9 +37,10 @@ Statement stmt;
         
     }
 
-    public void verArticulos(int idRevista) {
+    public String verArticulos(int idRevista) {
       int idArticulo;
       String nombre = "";
+      String resultado = "";
       try {
         stmt.executeQuery ("SELECT idArticulo, nombre FROM Articulos WHERE idRevista ="+ idRevista);
         ResultSet rs = stmt.getResultSet(); 
@@ -47,12 +48,13 @@ Statement stmt;
         while(rs.next()){
         idArticulo = rs.getInt("idArticulo");
           nombre = rs.getString("nombre"); 
-          System.out.println("<li> id: "+idArticulo+" nombre: " + nombre + "</li> ");
+          resultado+="<li> id: "+idArticulo+" nombre: " + nombre + "</li> ";
         }
         System.out.println("</ul>");                  
         rs.close(); 
          
       } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
+      return resultado;
     }
 }
 
