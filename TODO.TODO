@@ -1,0 +1,28 @@
+
+Interfaces:
+ ✔ Registro @done (14-11-24 19:22)
+   ☐ tenga 'tipo': usuario/autor/moderador/jefe
+ ☐ Login
+ ✔ InstertarArticulo @done (14-11-24 19:22)
+ ✔ InstertarRevista @done (14-11-24 19:22)
+ ☐ PublicarArticulo
+ ☐ PublicarRevista
+ ☐ ...
+
+Controles:
+ ☐ CancelarSubscripcion
+ ☐ InsertarArticulo
+ ☐ InsertarRevista
+ ☐ PublicarRevista
+ ☐ PublicarArticulo
+ ☐ ...
+
+Entidades:
+ ☐ Articulos
+ ☐ Banco*
+ ☐ Cliente
+ ☐ Cuenta*
+ ☐ Pagos*
+ ☐ Revistas
+ ☐ Subscripciones
+*falta por verifcar
