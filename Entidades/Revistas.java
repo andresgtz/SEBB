@@ -15,9 +15,9 @@ Statement stmt;
             conn = DriverManager.getConnection (url, userName, password);
             stmt = conn.createStatement();
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
-    }    
+    }
 
-    public void insertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN){
+    public void insertarRevista(String titulo, int numeroVolumen, String ISSN){
     //SQL QUERY
 
         java.util.Date dt = new java.util.Date();
@@ -29,8 +29,8 @@ Statement stmt;
         System.out.println(currentTime);
 
         try {
-         String s = "INSERT INTO Revistas (idRevista,titulo,numeroVolumen,ISSN ,fechaPublicacion)" +
-                   " VALUES ("+ idRevista + " , '" + titulo + "', " + numeroVolumen + ", '"+ ISSN + "', '"+ currentTime+"' )";
+         String s = "INSERT INTO Revistas" +
+                   " VALUES ( NULL , '" + titulo + "', " + numeroVolumen + ", '"+ ISSN + "', '"+ currentTime+"' )";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  

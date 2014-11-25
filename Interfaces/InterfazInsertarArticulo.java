@@ -42,9 +42,9 @@ public class InterfazInsertarArticulo extends HttpServlet {
     out.println("<p>Indique los siguientes datos para insertar un articulo</p>");
     out.println("<form method=\"GET\" action=\"InsertarArticulo\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarArticulo\"/>");
-    out.println("<p> ID Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
     out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
-    out.println("<p> Nombre  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
+    out.println("<p> Titulo  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
+    out.println("<p> Contenido  <input type=\"textarea\" name=\"contenido\"></p>");
     out.println("<p> Clasificacion  <input type=\"text\" name=\"clasificacion\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
@@ -61,14 +61,14 @@ public class InterfazInsertarArticulo extends HttpServlet {
     cr = new ControlInsertarArticulo();
     String salida = "";
     
-    int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
     int idRevista = Integer.parseInt(thisRequest.getParameter("idRevista").trim());
     String nombre = thisRequest.getParameter("nombre");
+    String contenido = thisRequest.getParameter("contenido");
     String clasificacion = thisRequest.getParameter("clasificacion");
     
-    cr.InsertarArticulo(idArticulo, idRevista, nombre, clasificacion);
+    cr.InsertarArticulo(idRevista, nombre, contenido, clasificacion);
     
-    out.println("<p>¡Articulo añadido correctamente!</p>");
+    out.println("<p>¡Articulo creado correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
