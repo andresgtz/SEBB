@@ -50,10 +50,10 @@ Statement stmt;
     public int getUserId(String e) {
         int id = 1;        
         try {
-         stmt.executeQuery ("SELECT idCliente FROM Clientes WHERE email ="+ e);
+         stmt.executeQuery ("SELECT idCliente FROM Clientes WHERE email ='"+ e+"'");
          ResultSet rs = stmt.getResultSet(); 
          rs.next();
-         id = rs.getBoolean("idCliente");                    
+         id = rs.getInt("idCliente");                    
          rs.close(); 
          return id;
       } catch (SQLException x) {System.out.println("No se encontro el usuario " + x);}
@@ -63,10 +63,10 @@ Statement stmt;
     public int getUserType(String e) {
         int tipo = 0;        
         try {
-         stmt.executeQuery ("SELECT tipo FROM Clientes WHERE email ="+ e);
+         stmt.executeQuery ("SELECT tipo FROM Clientes WHERE email ='"+ e+"'");
          ResultSet rs = stmt.getResultSet(); 
          rs.next();
-         tipo = rs.getBoolean("tipo");                    
+         tipo = rs.getInt("tipo");                    
          rs.close(); 
          return tipo;
       } catch (SQLException x) {System.out.println("No se encontro el usuario " + x);}
@@ -109,15 +109,16 @@ Statement stmt;
 
     public Boolean validar(String e,String p){
     //VALIDACION LOGIN
+      String nE="";
        try {
-         stmt.executeQuery ("SELECT email FROM CLIENTES WHERE email = '" + e +"'' and password = '"+p+"'");
+         stmt.executeQuery ("SELECT email FROM CLIENTES WHERE email = '" + e +"' and password = '"+p+"'");
          ResultSet rs = stmt.getResultSet(); 
-         if (rs.next()) { //Va al primer registro si lo hay
-            String nE = rs.getString("email");                      
-            rs.close(); 
-            return( e == nE );
-         }else{ return false;}
-      } catch (SQLException x) {System.out.println("Excepcion en validar " + x);}
+         rs.next(); //Va al primer registro si lo hay
+         nE = rs.getString("email");                     
+         rs.close(); 
+         System.out.println("-"+e + "=+=" + nE + "-" );
+         return( nE != "" );
+        }catch (SQLException x) {System.out.println("Excepcion en validar " + x);}
       return false;
         
     }
