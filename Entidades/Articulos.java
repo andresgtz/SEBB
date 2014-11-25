@@ -32,13 +32,13 @@ Statement stmt;
         return cont;
     }
 
-    public Boolean verificiarArticulo(int idArticulo) {
+    public Boolean verificarArticulo(int idArticulo) {
         Boolean publicado = false;        
         try {
          stmt.executeQuery ("SELECT publicado FROM Articulos WHERE idArticulo ="+ idArticulo);
          ResultSet rs = stmt.getResultSet(); 
          rs.next();
-         publicado = rs.getBoolean("contenido");                      
+         publicado = rs.getBoolean("publicado");                    
          rs.close(); 
          return publicado;
       } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
