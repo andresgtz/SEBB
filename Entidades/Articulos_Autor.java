@@ -2,16 +2,20 @@ package entidades;
 import java.sql.*;
 import java.io.*;
 
-public class Suscripciones{
-int id;
-char tipo;
-String fechaInicio;
-String fechaExpiracion;
-double precio;
+public class Articulos{
+int idArticulo;
+int idRevista;
+boolean publicado;
+boolean cartaJefe;
+boolean aprobado;
+int votos;
+String nombre;
+String fechaPublicacion;
+String clasificacion;
 Connection conn;
 Statement stmt;
 
-    public Suscripciones(){
+    public void Articulos(){
         try {
             String userName = "root";
             String password = "";
@@ -20,5 +24,4 @@ Statement stmt;
             conn = DriverManager.getConnection (url, userName, password);
             stmt = conn.createStatement();
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
-    }
 }
