@@ -134,9 +134,9 @@ public class InterfazLogin extends HttpServlet {
 
     public void menuJuez() {
 
-      out.println("<form method=\"GET\" action=\"PublicarArticulo\">");                 
+      out.println("<form method=\"GET\" action=\"Votar\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Publicar un articulo\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" value=\"Votar por un articulo\"name=\"B1\"></p>");
       out.println("</form>");
     }
 
