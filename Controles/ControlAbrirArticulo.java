@@ -1,14 +1,14 @@
 package controles;
-import entidades.Articulo;
+import entidades.Articulos;
 
-public class ControlInsertarArticulo {
+public class ControlAbrirArticulo {
   Articulos articulo;
 
-  public ControlInsertarArticulo() {
-    articulo = new Articulo();
+  public ControlAbrirArticulo() {
+    articulo = new Articulos();
   }
 
   public String AbrirArticulo(int idArticulo) {
-    return articulo.abrirArticulo(idArticulo);
+    return articulo.getArticulo(idArticulo);
   }
 }

@@ -6,7 +6,7 @@ public class Articulos{
 Connection conn;
 Statement stmt;
 
-    public void Articulos(){
+    public Articulos(){
         try {
             String userName = "root";
             String password = "";
@@ -18,11 +18,16 @@ Statement stmt;
     }
 
     public String getArticulo(int idArticulo) {
+        String cont="";
        try {
          stmt.executeQuery ("SELECT contenido FROM Articulos WHERE idArticulo ="+ idArticulo);
          ResultSet rs = stmt.getResultSet(); 
-         return rs;
+         rs.next();
+         cont = rs.getString("contenido");                      
+         rs.close(); 
+         return cont;
       } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
+        return cont;
     }
 
 }
