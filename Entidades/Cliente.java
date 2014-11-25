@@ -1,3 +1,23 @@
+/*
+CHEAT SHEET
+
+tipo: tipo que eres
+    0 = suscriptor
+    1 = autor
+    2 = juez
+    3 = admin/editorJefe
+
+tipoCreador: tipo que te creo
+    0 = suscriptor
+    1 = autor
+    2 = juez
+    3 = admin/editorJefe
+
+*/
+
+
+
+
 package entidades;
 import java.sql.*;
 import java.io.*;
@@ -31,8 +51,8 @@ Statement stmt;
     //SQL QUERY
     if (tipoCreador > tipo){
         try {
-           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo)" +
-                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "')";
+           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo, tipoCreador)" +
+                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "', '"+tipoCreador+"'')";
            System.out.println(s);
            stmt.executeUpdate(s);
         }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
@@ -105,7 +125,7 @@ Statement stmt;
     public Boolean validar(String e,String p){
     //SQL QUERY
        try {
-         stmt.executeQuery ("SELECT email FROM cuenta WHERE email = " + e +" and password = "+p);
+         stmt.executeQuery ("SELECT email FROM CLIENTES WHERE email = '" + e +"'' and password = '"+p+"'");
          ResultSet rs = stmt.getResultSet(); 
          if (rs.next()) { //Va al primer registro si lo hay
             String nE = rs.getString("email");                      

@@ -15,5 +15,14 @@ Statement stmt;
             conn = DriverManager.getConnection (url, userName, password);
             stmt = conn.createStatement();
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
-  }
+    }
+
+    public String getArticulo(int idArticulo) {
+       try {
+         stmt.executeQuery ("SELECT contenido FROM Articulos WHERE idArticulo ="+ idArticulo);
+         ResultSet rs = stmt.getResultSet(); 
+         return rs;
+      } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
+    }
+
 }

@@ -1,14 +1,13 @@
 
 Interfaces:
  ✔ Registro @done (14-11-24 19:22)
-   ☐ tenga 'tipo': usuario/autor/moderador/jefe
  ☐ Login
  ✔ InstertarArticulo @done (14-11-24 19:22)
  ✔ InstertarRevista @done (14-11-24 19:22)
- ✔ PublicarArticulo @started(14-11-24 19:49) @done (14-11-24 20:41) @lasted(0:52)
- ✔ PublicarRevista @started(14-11-24 20:41) @done (14-11-24 21:05) @lasted(0:24)
- ☐ AbrirArticulo
- ☐ AbrirRevista
+ ✔ PublicarArticulo @started(14-11-24 19:49) @done(14-11-24 20:41) @lasted(0:52)
+ ✔ PublicarRevista @started(14-11-24 20:41) @done(14-11-24 21:05) @lasted(0:24)
+ ☐ AbrirArticulo @started(14-11-24 22:06)
+ ☐ AbrirRevista 
  ☐ RenovarSubscripcion
  ☐ ...
 
@@ -19,9 +18,10 @@ Controles:
  ☐ PublicarRevista
  ☐ PublicarArticulo
  ☐ ...
-
+SON BASICAMENTE LAS FUNCIONES DE CLIENTE
 Entidades:
  ✔ Articulos @done (14-11-24 21:38)
+   ☐ getArticulo()
  ☐ Cliente
    ☐ agregarSuscripcion():int IdSuscripcion
    ☐ buscarArticulo(string busqueda): int idArticulo
@@ -29,7 +29,7 @@ Entidades:
    ☐ renovarSuscripcion():void
    ☐ cancelarSuscripcion():void
    ☐ insertarPago():void
-   ☐ agregarCliente():void
+   ✔ agregarCliente():void @done (14-11-24 21:50)
    ☐ eliminarCliente(string e):void
    ☐ publicarArticulo(int aid):void
    ☐ publicarRevista(int rid):void

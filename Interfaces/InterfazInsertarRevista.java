@@ -3,9 +3,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
-import controles.ControlInsertarArticulo;
+import controles.ControlInsertarRevista;
 
-public class InterfazInsertarArticulo extends HttpServlet {
+public class InterfazInsertarRevista extends HttpServlet {
   HttpServletResponse thisResponse;
   HttpServletRequest thisRequest;
   PrintWriter out;
@@ -40,7 +40,7 @@ public class InterfazInsertarArticulo extends HttpServlet {
 
   public void pedirDatos(){
     out.println("<p>Indique los siguientes datos para agregar una revista</p>");
-    out.println("<form method=\"GET\" action=\"InsertarArticulo\">");
+    out.println("<form method=\"GET\" action=\"InsertarRevista\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"insertarRevista\"/>");
     out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
     out.println("<p> Titulo  <input type=\"text\" name=\"titulo\" size=\"15\"></p>");
