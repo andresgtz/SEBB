@@ -11,8 +11,8 @@ public class ControlInsertarArticulo {
     articulo = new Articulos();
   }
 
-  public void InsertarArticulo(int idRevista, String nombre, String contenido, String clasificacion) {
-    articulo.insertarArticulo(idRevista, nombre, contenido, clasificacion);
+  public void InsertarArticulo(int idRevista, int idAutor, String nombre, String contenido, String clasificacion) {
+    articulo.insertarArticulo(idRevista, idAutor, nombre, contenido, clasificacion);
   }
 }
 
