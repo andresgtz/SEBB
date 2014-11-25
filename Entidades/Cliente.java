@@ -35,7 +35,6 @@ Statement stmt;
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
-        
     }
     
     public void eliminarCliente(String e){
