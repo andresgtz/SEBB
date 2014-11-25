@@ -45,6 +45,7 @@ create table Articulos(
 	fechaPublicacion DATE,
 	clasificacion VARCHAR(100) NOT NULL,
 	votos INT NOT NULL,
+	fechaExpiracion DATE,
 	PRIMARY KEY ( idArticulo ),
 	FOREIGN KEY (idRevista) REFERENCES Revistas(idRevista)
 	

@@ -48,16 +48,24 @@ Statement stmt;
     public void insertarArticulo(int idRevista, int idAutor, String nombre, String contenido, String clasificacion){
     //SQL QUERY
         java.util.Date dt = new java.util.Date();
-        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date expirationDate = new java.util.Date();
+        int month = expirationDate.getMonth();
+        month = (month + 12)%12;
+        expirationDate.setMonth(month);
 
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        java.text.SimpleDateFormat sexpirationDate = new java.text.SimpleDateFormat("yyyy-MM-dd");
 
         String currentTime = sdf.format(dt);
+        String expirationTime = sexpirationDate.format(expirationDate);
 
         System.out.println(currentTime);
+        System.out.println(expirationDate);
+
 
         try {
          String s = "INSERT INTO ARTICULOS " + 
-         " VALUES (NULL, '" + idRevista + "', '" + idAutor + "', '" + nombre + "', 0, '"+contenido+"', '"+ currentTime + "',"+ "'"+clasificacion+"', 0)";
+         " VALUES (NULL, '" + idRevista + "', '" + idAutor + "', '" + nombre + "', 0, '"+contenido+"', '"+ currentTime + "',"+ "'"+clasificacion+"', 0, '"+ expirationTime + "')";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
