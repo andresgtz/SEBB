@@ -48,11 +48,11 @@ public class InterfazCancelarSuscripcion extends HttpServlet {
     out.println("<form method=\"GET\" action=\"Cancelar Suscripcion\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"cancelarSuscripcion\"/>");
     out.println("<p> ID de Suscripcion  <input type=\"text\" name=\"idSuscripcion\" size=\"15\"></p>");
-    out.println("<p><input type=\"submit\" value=\"CancelarSuscripcion\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"CancelarSuscripcion\"name=\"B1\"></p>");
     out.println("</form>");
 
     out.println("<form method=\"GET\" action=\"menu.html\">");
-    out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c
@@ -70,7 +70,7 @@ public class InterfazCancelarSuscripcion extends HttpServlet {
     out.println("<p>La suscripcion: " + idSuscripcion +  " fue cancelada.</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
-    out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c

@@ -57,12 +57,12 @@ public class InterfazLogin extends HttpServlet {
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"validar\"/>");
     out.println("<p> Usuario  <input type=\"text\" name=\"usuario\" size=\"15\"></p>");
     out.println("<p> Constrasena <input type=\"text\" name=\"contrasena\" size=\"15\"></p>");
-    out.println("<p><input type=\"submit\" value=\"Enviar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Enviar\"name=\"B1\"></p>");
     
     out.println("</form>");
  
     out.println("<form method=\"GET\" action=\"index.html\">");
-    out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c
@@ -124,12 +124,12 @@ public class InterfazLogin extends HttpServlet {
 
       out.println("<form method=\"GET\" action=\"InsertarArticulo\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Crear un articulo\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Crear un articulo\"name=\"B1\"></p>");
       out.println("</form>");
 
       out.println("<form method=\"GET\" action=\"InsertarRevista\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Crear revista\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Crear revista\"name=\"B1\"></p>");
       out.println("</form>");
     }
 
@@ -137,19 +137,19 @@ public class InterfazLogin extends HttpServlet {
 
       out.println("<form method=\"GET\" action=\"Votar\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Votar por un articulo\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Votar por un articulo\"name=\"B1\"></p>");
       out.println("</form>");
     }
 
     public void menuEditorEnJefe() {
       // out.println("<form method=\"GET\" action=\"SeleccionarJuez\">");                 
       // out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      // out.println("<p><input type=\"submit\" value=\"Seleccionar un juez\"name=\"B1\"></p>");
+      // out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Seleccionar un juez\"name=\"B1\"></p>");
       // out.println("</form>");
 
       out.println("<form method=\"GET\" action=\"PublicarArticulo\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Publicar algun articulo\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Publicar algun articulo\"name=\"B1\"></p>");
       out.println("</form>");
     }
 
@@ -157,22 +157,22 @@ public class InterfazLogin extends HttpServlet {
 
       out.println("<form method=\"GET\" action=\"AbrirArticulo\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Abrir a articulo\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Abrir a articulo\"name=\"B1\"></p>");
       out.println("</form>");
 
       out.println("<form method=\"GET\" action=\"AbrirRevista\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Abrir revista\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Abrir revista\"name=\"B1\"></p>");
       out.println("</form>");
 
       out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Renovar tu suscripcion\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Renovar tu suscripcion\"name=\"B1\"></p>");
       out.println("</form>");
 
       out.println("<form method=\"GET\" action=\"CancelarSuscripcion\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Cancelar tu suscripcion\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar tu suscripcion\"name=\"B1\"></p>");
       out.println("</form>");
 
 
@@ -182,12 +182,12 @@ public class InterfazLogin extends HttpServlet {
 
       out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Renovar tu suscripcion\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Renovar tu suscripcion\"name=\"B1\"></p>");
       out.println("</form>");
 
       out.println("<form method=\"GET\" action=\"CancelarSuscripcion\">");                 
       out.println("<input type=\"hidden\" name=\"idUsuario\" value=\"" + userid + "\"/>");       
-      out.println("<p><input type=\"submit\" value=\"Cancelar tu suscripcion\"name=\"B1\"></p>");
+      out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar tu suscripcion\"name=\"B1\"></p>");
       out.println("</form>");
 
 

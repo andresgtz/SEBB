@@ -49,15 +49,15 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
   }
 
   public void pedirDatos(){
-    out.println("<p>Indique los datos del articulo</p>");
+    out.println("<p></p>");
     out.println("<form method=\"GET\" action=\"RenovarSuscripcion\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"renovarSuscripcion\"/>");
     out.println("<input type=\"hidden\" name=\"idCliente\" value=\"" + idUsuario + "\"/>");
-    out.println("<p><input type=\"submit\" value=\"Renovar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Renovar\"name=\"B1\"></p>");
     out.println("</form>");
 
     out.println("<form method=\"GET\" action=\"index.html\">");
-    out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c
@@ -75,7 +75,7 @@ public class InterfazRenovarSuscripcion extends HttpServlet {
     out.println("<p>La suscripcion del cliente: " + idUsuario +  " fue renovada.</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"index.html\">");
-    out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c

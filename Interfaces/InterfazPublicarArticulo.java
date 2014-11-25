@@ -48,11 +48,11 @@ public class InterfazPublicarArticulo extends HttpServlet {
     out.println("<form method=\"GET\" action=\"PublicarArticulo\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"publicarArticulo\"/>");
     out.println("<p> ID del Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
-    out.println("<p><input type=\"submit\" value=\"Publicar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Publicar\"name=\"B1\"></p>");
     out.println("</form>");
 
     out.println("<form method=\"GET\" action=\"index.html\">");
-    out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c
@@ -70,7 +70,7 @@ public class InterfazPublicarArticulo extends HttpServlet {
     out.println("<p>El articulo " + idArticulo +  " fue agredado a la revista.</p>");
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
-    out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c

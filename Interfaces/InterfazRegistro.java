@@ -55,11 +55,11 @@ public class InterfazRegistro extends HttpServlet {
     out.println("<p> Password <input type=\"text\" name=\"password\" size=\"15\"></p>");
     out.println("<p> Tipo <input type=\"text\" name=\"tipo\" size=\"15\"></p>");
     out.println("<p>Tipos:<br><ul><li>0: Suscriptor</li><li>1: Autor</li><li>2: Juez</li><li>3: Jefe Editor</li></li></p>");
-    out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
  
     out.println("<form method=\"GET\" action=\"index.html\">");
-    out.println("<p><input type=\"submit\" value=\"Cancelar\"name=\"B2\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Cancelar\"name=\"B2\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c
@@ -86,7 +86,7 @@ public class InterfazRegistro extends HttpServlet {
     
     out.println("<p>Presione el boton para1 terminar.</p>");
     out.println("<form method=\"GET\" action=\"index.html\">");
-    out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" class=\"btn btn-default\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c
     out.println("</div>");//c
