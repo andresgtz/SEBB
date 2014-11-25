@@ -11,4 +11,8 @@ public class ControlAbrirArticulo {
   public String AbrirArticulo(int idArticulo) {
     return articulo.getArticulo(idArticulo);
   }
+
+  public String verificarArticulo(int idArticulo) {
+    return articulo.verificarArticulo(idArticulo);
+  }
 }

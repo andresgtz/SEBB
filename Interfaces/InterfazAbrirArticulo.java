@@ -60,9 +60,13 @@ public class InterfazAbrirArticulo extends HttpServlet {
 
     int idArticulo = Integer.parseInt(thisRequest.getParameter("idArticulo").trim());
 
-    salida = cr.AbrirArticulo(idArticulo);
-
-    out.println("<p>El articulo es el siguiente: " + salida +  "</p>");
+    Boolean publicado = cr.verificarArticulo(idArticulo);
+    if(publicado){
+      salida = cr.AbrirArticulo(idArticulo);
+      out.println("<p>El articulo es el siguiente: " + salida +  "</p>");
+    } else {
+      out.println("<p>El articulo no ha sido publicado o no existe.</p>");
+    }
     out.println("<p>Presione el boton para terminar.</p>");
     out.println("<form method=\"GET\" action=\"menu.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
