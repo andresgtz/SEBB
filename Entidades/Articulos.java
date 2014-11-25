@@ -30,13 +30,13 @@ Statement stmt;
         return cont;
     }
 
-    public Boolean verificiarArticulo(int idArticulo) {
+    public Boolean verificarArticulo(int idArticulo) {
         Boolean publicado = false;        
         try {
          stmt.executeQuery ("SELECT publicado FROM Articulos WHERE idArticulo ="+ idArticulo);
          ResultSet rs = stmt.getResultSet(); 
          rs.next();
-         publicado = rs.getBoolean("contenido");                      
+         publicado = rs.getBoolean("publicado");                    
          rs.close(); 
          return publicado;
       } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
@@ -59,6 +59,17 @@ Statement stmt;
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
+    }
+    
+    public void votar(int idArticulo) {
+      try {
+        stmt.executeQuery ("SELECT votos FROM Articulos WHERE idArticulo =" + idArticulo);
+        ResultSet rs = stmt.getResultSet();
+        int votos = rs.getInt ("votos");
+        votos = votos + 1;
+        String s = "UPDATE Articulos SET votos = " + votos + " WHERE idArticulo = " + idArticulo;
+        stmt.executeQuery (s);
+      } catch (SQLException e) {System.out.println ("Cannot vote for the article" + e);}
     }
 
     public void publicarArticulo(int ida){
