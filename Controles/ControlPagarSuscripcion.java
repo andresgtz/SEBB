@@ -1,10 +1,10 @@
 package controles;
-import entidades.Suscripcion;
+import entidades.*;
 
 public class ControlPagarSuscripcion {
   Suscripciones suscripcion;
 
-  public ControlPagarSuscripcion {
+  public ControlPagarSuscripcion() {
     suscripcion = new Suscripcion();
   }
 
