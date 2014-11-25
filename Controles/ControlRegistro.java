@@ -10,5 +10,6 @@ public class ControlRegistro {
     
     public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo, int tipoCreador) {
         suscriptor.agregarCliente(email, nombre, apellido, telefono, password, int tipo, int tipoCreador);
+
     }
 }

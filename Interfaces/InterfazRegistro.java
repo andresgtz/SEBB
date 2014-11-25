@@ -69,7 +69,9 @@ public class InterfazRegistro extends HttpServlet {
     String apellido = thisRequest.getParameter("apellido").trim();
     String telefono = thisRequest.getParameter("telefono").trim();
     String password = thisRequest.getParameter("password").trim();
+
     int tipo = Integer.parseInt(thisRequest.getParameter("tipo").trim());
+
 
     out.println("<p>Su registro fue exitoso, " + nombre +  ". Gracias por suscribirse a nuestra revista.</p>");
     

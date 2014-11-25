@@ -105,7 +105,7 @@ Statement stmt;
     public Boolean validar(String e,String p){
     //SQL QUERY
        try {
-         stmt.executeQuery ("SELECT email FROM cuenta WHERE email = " + e +" and password = "+p);
+         stmt.executeQuery ("SELECT email FROM CLIENTES WHERE email = '" + e +"'' and password = '"+p+"'");
          ResultSet rs = stmt.getResultSet(); 
          if (rs.next()) { //Va al primer registro si lo hay
             String nE = rs.getString("email");                      
