@@ -57,10 +57,3 @@ create table Articulo_Autor(
 	FOREIGN KEY (idArticulo) REFERENCES Articulos(idArticulo),
 	FOREIGN KEY (idAutor) REFERENCES Clientes(idCliente)
 );
-
-create table Sesion(
-	idSesion INT NOT NULL AUTO_INCREMENT,
-	userID INT NOT NULL,
-	userType INT NOT NULL,
-	PRIMARY KEY(idSesion)
-);
