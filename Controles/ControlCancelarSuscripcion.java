@@ -5,7 +5,7 @@ public class ControlCancelarSuscripcion {
   Suscripciones suscripcion;
 
   public ControlCancelarSuscripcion(){
-    suscripcion = new Suscripcion();
+    suscripcion = new Suscripciones();
   }
 
   public void cancelarSuscripcion(int idSuscripcion){

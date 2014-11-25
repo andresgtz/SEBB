@@ -46,7 +46,6 @@ public class InterfazInsertarArticulo extends HttpServlet {
     out.println("<p> ID Revista  <input type=\"text\" name=\"idRevista\" size=\"15\"></p>");
     out.println("<p> Nombre  <input type=\"text\" name=\"nombre\" size=\"15\"></p>");
     out.println("<p> Autor  <input type=\"text\" name=\"autor\" size=\"15\"></p>");
-    out.println("<p> Fecha  <input type=\"text\" name=\"fecha\" size=\"15\"></p>");
     out.println("<p> Clasificacion  <input type=\"text\" name=\"clasificacion\" size=\"15\"></p>");
     out.println("<p><input type=\"submit\" value=\"Registrar\"name=\"B1\"></p>");
     out.println("</form>");
@@ -67,10 +66,9 @@ public class InterfazInsertarArticulo extends HttpServlet {
     int idRevista = Integer.parseInt(thisRequest.getParameter("idRevista").trim());
     String nombre = thisRequest.getParameter("nombre");
     String autor = thisRequest.getParameter("autor");
-    String fecha = thisRequest.getParameter("fecha");
     String clasificacion = thisRequest.getParameter("clasificacion");
     
-    cr.insertarArticulo(idArticulo, idRevista, nombre, autor, fecha, autor, clasificacion);
+    cr.InsertarArticulo(idArticulo, idRevista, nombre, autor, clasificacion);
     
     out.println("<p>¡Articulo añadido correctamente!</p>");
     out.println("<p>Presione el boton para terminar.</p>");

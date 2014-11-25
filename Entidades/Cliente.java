@@ -7,12 +7,6 @@ tipo: tipo que eres
     2 = juez
     3 = admin/editorJefe
 
-tipoCreador: tipo que te creo
-    0 = suscriptor
-    1 = autor
-    2 = juez
-    3 = admin/editorJefe
-
 */
 
 
@@ -47,17 +41,14 @@ Statement stmt;
       }catch (Exception e) { System.out.println ("Cannot connect to database server"); }
     }
 
-    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo, int tipoCreador){
+    public void agregarCliente(String email, String nombre, String apellido, String telefono, String password, int tipo){
     //SQL QUERY
-    if (tipoCreador > tipo){
         try {
-           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo, tipoCreador)" +
-                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "', '"+tipoCreador+"')";
+           String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo)" +
+                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', " + tipo + ")";
            System.out.println(s);
            stmt.executeUpdate(s);
         }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
-      } else 
-          System.out.println ("User doesn't have enough privilege");
     }
     
     public void eliminarCliente(String e){
@@ -69,18 +60,7 @@ Statement stmt;
       }catch (Exception g) { System.out.println ("Cannot update database" + g ); }  
         
     }
-
-    public void insertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN ,String fechaPublicacion){
-    //SQL QUERY
-        try {
-         String s = "INSERT INTO CLIENTES (idRevista,titulo,numeroVolumen,ISSN ,fechaPublicacion)" +
-                   " VALUES ("+ idRevista + " , '" + titulo + "', " + numeroVolumen + ", '"+ ISSN + "', '"+ fechaPublicacion+" )";
-         System.out.println(s);
-         stmt.executeUpdate(s);
-      }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
-        
-    }
-
+    
     public void publicarArticulo(int ida, String fecha){
       try {
          String s = "UPDATE articulo SET fechaPublicacion = " + fecha + " WHERE ncuenta = " + ida;
@@ -88,11 +68,19 @@ Statement stmt;
       } catch (SQLException e) {System.out.println ("Cannot publish article" + e);}
     }
 
-    public void insertarArticulo(int idArticulo, int idRevista, String nombre, String autor, String fechaPublicacion, String clasificacion){
+    public void insertarArticulo(int idArticulo, int idRevista, String nombre, String autor, String clasificacion){
     //SQL QUERY
+        java.util.Date dt = new java.util.Date();
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+
+
+        String currentTime = sdf.format(dt);
+
+        System.out.println(currentTime);
+
         try {
-         String s = "INSERT INTO CLIENTES (idArticulo, idRevista, nombre, autor, fechaPublicacion, clasificacion)" + 
-         " VALUES ("+ idArticulo + " , '" + idRevista + "', " + nombre + ", '"+ autor + "', '"+ fechaPublicacion + "',"+ "'"+clasificacion+" )";
+         String s = "INSERT INTO ARTICULOS (idArticulo, idRevista, nombre, contenido, autor, fechaPublicacion, clasificacion, votos)" + 
+         " VALUES ("+ idArticulo + " , '" + idRevista + "', " + nombre + ", 'contenido', '"+ autor + "', '"+ currentTime + "',"+ "'"+clasificacion+"', 0)";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
@@ -123,7 +111,7 @@ Statement stmt;
     }
 
     public Boolean validar(String e,String p){
-    //SQL QUERY
+    //VALIDACION LOGIN
        try {
          stmt.executeQuery ("SELECT email FROM CLIENTES WHERE email = '" + e +"'' and password = '"+p+"'");
          ResultSet rs = stmt.getResultSet(); 
