@@ -30,6 +30,19 @@ Statement stmt;
         return cont;
     }
 
+    public Boolean verificiarArticulo(int idArticulo) {
+        Boolean publicado = false;        
+        try {
+         stmt.executeQuery ("SELECT publicado FROM Articulos WHERE idArticulo ="+ idArticulo);
+         ResultSet rs = stmt.getResultSet(); 
+         rs.next();
+         publicado = rs.getBoolean("contenido");                      
+         rs.close(); 
+         return publicado;
+      } catch (SQLException x) {System.out.println("No se encontro el articulo " + x);}
+        return publicado;
+    }
+
     public void insertarArticulo(int idRevista, String nombre, String contenido, String clasificacion){
     //SQL QUERY
         java.util.Date dt = new java.util.Date();
