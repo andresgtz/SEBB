@@ -1,5 +1,5 @@
 package controles;
-import entidades.Articulos;
+import entidades.*;
 
 public class ControlSolicitudEspecial {
   Articulos articulo;
@@ -7,4 +7,4 @@ public class ControlSolicitudEspecial {
   public ControlSolicitudEspecial() {
     articulo = new Articulo();
   }
-
+}

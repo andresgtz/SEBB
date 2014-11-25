@@ -4,7 +4,7 @@ import entidades.Suscripciones;
 public class ControlCancelarSuscripcion {
   Suscripciones suscripcion;
 
-  public ControlRenovarSuscripcion(){
+  public ControlCancelarSuscripcion(){
     suscripcion = new Suscripcion();
   }
 
