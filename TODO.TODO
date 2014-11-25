@@ -21,7 +21,7 @@ Controles:
  ☐ ...
 
 Entidades:
- ☐ Articulos
+ ✔ Articulos @done (14-11-24 21:38)
  ☐ Cliente
    ☐ agregarSuscripcion():int IdSuscripcion
    ☐ buscarArticulo(string busqueda): int idArticulo
@@ -33,8 +33,8 @@ Entidades:
    ☐ eliminarCliente(string e):void
    ☐ publicarArticulo(int aid):void
    ☐ publicarRevista(int rid):void
- ☐ Revistas
- ☐ Subscripciones
+ ✔ Revistas @done (14-11-24 21:38)
+ ✔ Subscripciones @done (14-11-24 21:38)
 *falta por verifcar
 Extra:
  ☐ Debugg clases @started(14-11-24 19:49)
