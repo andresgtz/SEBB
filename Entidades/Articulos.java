@@ -49,9 +49,9 @@ Statement stmt;
     //SQL QUERY
         java.util.Date dt = new java.util.Date();
         java.util.Date expirationDate = new java.util.Date();
-        int month = expirationDate.getMonth();
-        month = (month + 12)%12;
-        expirationDate.setMonth(month);
+        int year = expirationDate.getYear();
+        year = (year + 1);
+        expirationDate.setYear(year);
 
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
         java.text.SimpleDateFormat sexpirationDate = new java.text.SimpleDateFormat("yyyy-MM-dd");
