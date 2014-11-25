@@ -48,7 +48,7 @@ public class InterfazVotar extends HttpServlet {
     out.println("<form method=\"GET\" action=\"Votar\">");
     out.println("<input type=\"hidden\" name=\"operacion\" value=\"Votar\"/>");
     out.println("<p> ID Articulo  <input type=\"text\" name=\"idArticulo\" size=\"15\"></p>");
-    out.println("<p><input type=\"submit\" value=\"Ver\"name=\"B1\"></p>");
+    out.println("<p><input type=\"submit\" value=\"Votar\"name=\"B1\"></p>");
     out.println("</form>");
 
     out.println("<form method=\"GET\" action=\"index.html\">");
@@ -70,7 +70,7 @@ public class InterfazVotar extends HttpServlet {
 
     
     out.println("<p>Presione el boton para terminar.</p>");
-    out.println("<form method=\"GET\" action=\"menu.html\">");
+    out.println("<form method=\"GET\" action=\"index.html\">");
     out.println("<p><input type=\"submit\" value=\"Terminar\"name=\"B1\"></p>");
     out.println("</form>");
     out.println("</div>");//c
