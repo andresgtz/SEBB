@@ -43,15 +43,13 @@ Statement stmt;
     public void eliminarCliente(String e){
     //SQL QUERY
         try {
-         String s = "DELETE FROM CLIENTES WHERE email='" + e+"'";
+         String s = "DELETE FROM CLIENTES WHERE email='" + e +"'";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception g) { System.out.println ("Cannot update database" + g ); }  
         
     }
 
-
- 
     public void insertarRevista(int idRevista, String titulo, int numeroVolumen, String ISSN ,String fechaPublicacion){
     //SQL QUERY
         try {

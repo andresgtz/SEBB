@@ -13,7 +13,7 @@ Interfaces:
  ☐ ...
 
 Controles:
- ☐ CancelarSubscripcion
+ : CancelarSubscripcion
  ☐ InsertarArticulo
  ☐ InsertarRevista
  ☐ PublicarRevista
