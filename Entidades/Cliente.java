@@ -52,7 +52,7 @@ Statement stmt;
     if (tipoCreador > tipo){
         try {
            String s = "INSERT INTO CLIENTES (email, nombre, apellido, telefono, password, tipo, tipoCreador)" +
-                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo "', '"+tipoCreador+"'')";
+                   " VALUES ('"+ email + "', '" + nombre + "', '" + apellido + "', '" + telefono + "', '" + password + "', '" + tipo + "', '"+ tipoCreador+"')";
            System.out.println(s);
            stmt.executeUpdate(s);
         }catch (Exception f) { System.out.println ("Cannot update database" + f ); }  
