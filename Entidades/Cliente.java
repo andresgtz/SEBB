@@ -7,12 +7,6 @@ tipo: tipo que eres
     2 = juez
     3 = admin/editorJefe
 
-tipoCreador: tipo que te creo
-    0 = suscriptor
-    1 = autor
-    2 = juez
-    3 = admin/editorJefe
-
 */
 
 
@@ -85,11 +79,19 @@ Statement stmt;
       } catch (SQLException e) {System.out.println ("Cannot publish article" + e);}
     }
 
-    public void insertarArticulo(int idArticulo, int idRevista, String nombre, String autor, String fechaPublicacion, String clasificacion){
+    public void insertarArticulo(int idArticulo, int idRevista, String nombre, String autor, String clasificacion){
     //SQL QUERY
+        java.util.Date dt = new java.util.Date();
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
+
+
+        String currentTime = sdf.format(dt);
+
+        System.out.println(currentTime);
+
         try {
-         String s = "INSERT INTO CLIENTES (idArticulo, idRevista, nombre, autor, fechaPublicacion, clasificacion)" + 
-         " VALUES ("+ idArticulo + " , '" + idRevista + "', " + nombre + ", '"+ autor + "', '"+ fechaPublicacion + "',"+ "'"+clasificacion+" )";
+         String s = "INSERT INTO ARTICULOS (idArticulo, idRevista, nombre, contenido, autor, fechaPublicacion, clasificacion, votos)" + 
+         " VALUES ("+ idArticulo + " , '" + idRevista + "', " + nombre + ", 'contenido', '"+ autor + "', '"+ currentTime + "',"+ "'"+clasificacion+"', 0)";
          System.out.println(s);
          stmt.executeUpdate(s);
       }catch (Exception e) { System.out.println ("Cannot update database" + e ); }  
